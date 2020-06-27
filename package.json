@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "Решение тестового задания от CreativePeople на вакансию «Frontend-разработчик»",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+ "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch",
+    "start": "webpack-dev-server --mode development --open"
   },
   "keywords": [],
   "author": "Sidachenko Michael (michaellux@yandex.ru, michaelluxwork@gmail.com)",
