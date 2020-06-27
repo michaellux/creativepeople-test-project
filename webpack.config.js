@@ -1,6 +1,8 @@
 const path = require("path");
 const fs = require("fs");
 
+const StylelintPlugin = require('stylelint-webpack-plugin');
+
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -94,5 +96,6 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "./css/style.bundle.css",
         }),
+        new StylelintPlugin(),
     ].concat(htmlPlugins),
 };
