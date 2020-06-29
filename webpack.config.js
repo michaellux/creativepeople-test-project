@@ -7,6 +7,7 @@ const StylelintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
@@ -34,6 +35,15 @@ module.exports = {
   devtool: 'source-map',
   module: {
     rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          loaders: {
+            js: 'babel-loader',
+          },
+        },
+      },
       {
         test: /\.js$/,
         include: path.resolve(__dirname, 'src/js'),
@@ -102,6 +112,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: './css/style.bundle.css',
     }),
+    new VueLoaderPlugin(),
     new CopyPlugin({
       patterns: [
         {
@@ -124,4 +135,9 @@ module.exports = {
     }),
     new StylelintPlugin(),
   ].concat(htmlPlugins),
+  resolve: {
+    alias: {
+      vue$: 'vue/dist/vue.esm.js', // 'vue/dist/vue.common.js' для webpack 1
+    },
+  },
 };
