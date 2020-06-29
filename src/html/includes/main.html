@@ -38,6 +38,25 @@
 </blockquote>
 <p>В 2018 году компания удостоилась главной архитектурной премии Европы — European Prize for Architecture. Знатоки архитектуры считают нашу компанию мастером выверенных фасадов.</p>
 </section>
-<div id="advantages">{{advantages}}</div>
-<section id="news">{{news}}</section>
+<div id="advantages" >
+    <div v-for="advantage in advantagesList">
+        <object type="image/svg+xml" data="img/plus-open.svg"></object>
+        <span>{{advantage.title}}</span>
+        <span>{{advantage.subtitle}}</span>
+        <p>{{advantage.text}}</p>
+    </div>
+</div>
+<section id="news">
+<h3>Новости</h3>
+<nav>
+<select name="" id=""></select>
+<select name="" id=""></select>
+</nav>
+    <article v-for="newsItem in newsList">
+        <img src="/" alt="">
+        <h4>{{newsItem.title}}</h4>
+        <p>{{newsItem.text}}</p>
+        <datetime datetime="{{newsItem.date}}">{{newsItem.title}}</datetime>
+    </article>
+</section>
 </main>
