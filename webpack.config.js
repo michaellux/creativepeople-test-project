@@ -6,6 +6,7 @@ const cssnano = require('cssnano');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
@@ -100,6 +101,26 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: './css/style.bundle.css',
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: './src/fonts',
+          to: './fonts',
+        },
+        {
+          from: './src/favicon',
+          to: './favicon',
+        },
+        {
+          from: './src/img',
+          to: './img',
+        },
+        {
+          from: './src/uploads',
+          to: './uploads',
+        },
+      ],
     }),
     new StylelintPlugin(),
   ].concat(htmlPlugins),
