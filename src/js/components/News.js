@@ -62,6 +62,16 @@ const news = new Vue({
       ],
     };
   },
+  computed: {
+    years() {
+      const year = new Date().getFullYear();
+      return Array.from({ length: year - 2004 }, (value, index) => 2005 + index);
+    },
+    months() {
+      const months = Array.from({ length: 12 }, (e, i) => new Date(null, i + 1, null).toLocaleDateString('ru', { month: 'long' }));
+      return months;
+    },
+  },
 });
 
 export default news;
