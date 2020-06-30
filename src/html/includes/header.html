@@ -14,11 +14,13 @@
     <title><%=title%></title>
   </head>
   <body>
-  <header>
-    <button>
-      <object type="image/svg+xml" data="img/hamburger-icon.svg"></object>
+  <header class="header d-flex justify-content-between">
+    <button class="header__hamburger-button d-inline ">
+      <object class="hamburger-button__icon" type="image/svg+xml" data="img/hamburger-icon.svg"></object>
     </button>
-    <h1><object type="image/svg+xml" data="img/logo.svg"></object></h1>
-    <button>En</button>
-    <button><object type="image/svg+xml" data="img/phone.svg"></object></button>
+    <h1 class="header__logo d-inline"><object type="image/svg+xml" data="img/logo.svg"></object></h1>
+    <div class="header__additional-buttons">
+      <button class="additional-buttons__language-button d-inline">En</button>
+      <button class="additional-buttons__phone-button d-inline"><object type="image/svg+xml" data="img/phone.svg"></object></button>
+    </div>
   </header>
