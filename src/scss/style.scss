@@ -1,1 +1,193 @@
 @import "~bootstrap/scss/bootstrap";
+$root-font-size: 16px;
+$padding: 15px*2;
+
+$text-and-icons_dark: #000;
+$text-and-icons_light: #fff;
+$header: #333;
+$controls-and-nav: #ff6c6c;
+$controls-and-nav_hover: rgba(255, 108, 108, 0.75);
+$phone-back : #01576c;
+$phone-back_hover : rgba(1, 87, 108, 0.75);
+$language-back: #99bcc4;
+$language-back_hover: #b3cdd3;
+
+@function rem($size) {
+  @return $size / $root-font-size * 1rem;
+}
+
+.header {
+  padding: rem(40px);
+}
+
+.header__hamburger-button {
+  position: relative;
+}
+
+.header__additional-buttons {
+  display: flex;
+  flex-basis: rem(150px);
+  justify-content: space-between;
+}
+
+.header__hamburger-button,
+.additional-buttons__language-button,
+.additional-buttons__phone-button {
+  width: rem(60px);
+  height: rem(60px);
+}
+
+main {
+  margin-top: rem(90px);
+}
+
+.main__about-title {
+  margin-bottom: rem(50px);
+  font-weight: bold;
+  font-size: rem(45px);
+  line-height: rem(65px);
+}
+
+.navigation__menu {
+  display: flex;
+  flex-basis: rem(326px);
+  width: rem(375px);
+  justify-content: space-between;
+  padding: 0;
+  margin-bottom: rem(80px);
+}
+
+.text {
+  font-style: normal;
+  font-weight: 300;
+  font-size: rem(18px);
+  line-height: rem(25px);
+  margin-bottom: rem(30px);
+}
+
+.text-rebranding {
+  padding: 0;
+  list-style-position: inside;
+}
+
+.text-rebranding__item {
+  margin-bottom: rem(20px);
+}
+
+.text-sociorebranding {
+  margin-top: rem(20px);
+  list-style-position: inside;
+  padding-left: rem(25px);
+}
+
+.text-strategy {
+  margin-bottom: rem(50px);
+}
+
+.figure-about__caption {
+  margin-top: rem(20px);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.figure-about__position {
+  margin-top: rem(21px);
+}
+
+.text-aboutchangestrategy {
+  margin: rem(70px) 0 rem(58px) 0;
+}
+
+.quote-block__text {
+  margin-bottom: rem(25px);
+}
+
+.quote-block__author {
+  margin-bottom: 5px;
+}
+
+.text-prize {
+  margin: rem(50px) 0;
+}
+
+.advantages {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin: rem(50px) 0 rem(120px) 0;
+  height: rem(720px);
+  background: url(/img/advantages-back.jpg);
+  color: $text-and-icons_light;
+}
+
+.advantages__item {
+  text-align: center;
+}
+
+.section-news__title {
+  text-indent: rem(-2px);
+  font-weight: bold;
+  font-size: rem(35px);
+  line-height: rem(50px);
+}
+
+.filter {
+  width: rem(88px);
+  overflow: hidden;
+}
+
+.filter-year,
+.filter-month {
+  margin-left: rem(-2px);
+  border: none;
+  text-indent: rem(1px);
+  text-overflow: '';
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.filter-year {
+  width: rem(110px);
+  background: transparent url(/img/arrow-menu.svg) no-repeat rem(70px) center;
+}
+
+.filter-month {
+  width: rem(150px);
+  background: transparent url(/img/arrow-menu.svg) no-repeat rem(90px) center;
+}
+
+.section-news__news {
+  display: grid;
+  grid-template-columns: rem(316px) rem(316px) rem(316px);
+  grid-template-rows: 1fr  1fr rem(400px);
+  grid-column-gap: 20px;
+  grid-row-gap: rem(40px);
+  justify-items: stretch;
+  align-items: stretch;
+}
+
+@media (max-width: 1440px) {
+  .container {
+    min-width: 988px + $padding;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    min-width: 940px;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 768px) {
+  .container {
+    min-width: 688px;
+  }
+}
+
+@media (min-width: 320px) {
+  .container {
+    min-width: 290px;
+  }
+}
