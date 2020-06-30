@@ -2,6 +2,7 @@
 
 const path = require('path');
 const fs = require('fs');
+const webpack = require('webpack');
 const cssnano = require('cssnano');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -134,6 +135,11 @@ module.exports = {
       ],
     }),
     new StylelintPlugin(),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      Vue: ['vue/dist/vue.esm.js', 'default'],
+    }),
   ].concat(htmlPlugins),
   resolve: {
     alias: {
