@@ -86,15 +86,11 @@ main {
   margin-bottom: rem(50px);
 }
 
-.figure-about__caption {
-  margin-top: rem(20px);
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 18px;
-}
-
-.figure-about__position {
-  margin-top: rem(21px);
+.about-slider,
+.about-slider__slide {
+  width: rem(820px);
+  height: rem(500px);
+  margin: 0;
 }
 
 .text-aboutchangestrategy {
