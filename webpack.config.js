@@ -8,7 +8,8 @@ const StylelintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const MomentLocalesPlugin = require('moment-locales-webpack-plugin');
 
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
@@ -139,6 +140,9 @@ module.exports = {
       $: 'jquery',
       jQuery: 'jquery',
       Vue: ['vue/dist/vue.esm.js', 'default'],
+    }),
+    new MomentLocalesPlugin({
+      localesToKeep: ['es-us', 'ru'],
     }),
   ].concat(htmlPlugins),
   resolve: {
