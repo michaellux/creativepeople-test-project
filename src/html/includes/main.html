@@ -50,24 +50,24 @@
 <h3 class="section-news__title">Новости</h3>
 <nav class="section-news__navigation navigation">
 <div class="filter d-inline">
-<select class="filter-year" name="" id="">
-    <option class="filter-year__title" value="0">Все годы</option>
+<select class="filter-year" v-model="selectedYear">
+    <option class="filter-year__title" value="">Все годы</option>
     <option class="filter-year__option" v-for="year in years" :value="year">{{ year }} год</option>
 </select>
 </div>
 <div class="filter d-inline">
-    <select class="filter-month" name="" id="">
-        <option class="filter-month__title" value="0">Все месяцы</option>
+    <select class="filter-month" v-model="selectedMonth">
+        <option class="filter-month__title" value="">Все месяцы</option>
         <option class="filter-month__month" v-for="month in months" :value="month">{{ month }}</option>
     </select>
 </div>
 </nav>
     <div class="section-news__news">
-        <article class="section-news__newsitem newsitem" v-for="newsItem in newsList">
+        <article class="section-news__newsitem newsitem" v-for="(newsItem, index) in filteredNewsList">
             <img class="newsitem__image" src="/" alt="">
             <h4 class="newsitem__title">{{newsItem.title}}</h4>
             <p class="text newsitem__text">{{newsItem.text}}</p>
-            <datetime class="newsitem__date" datetime="{{newsItem.date}}">{{newsItem.title}}</datetime>
+            <datetime class="newsitem__date" :datetime="newsItem.date">{{newsItem.date}}</datetime>
         </article>
     </div>
     <button class="section-news__loadmore-button">Загрузить ещё</button>
