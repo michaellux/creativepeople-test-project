@@ -6,7 +6,7 @@
         <li class="menu__item d-inline"><a href="#news">Новости<object type="image/svg+xml" data="img/arrow-menu.svg"></object></a></li>
     </ul>
 </nav>
-<section class="section-about">
+<section class="section-about" id="about">
 <p class="text text-selection">
     Селекция бренда, анализируя результаты рекламной кампании, осмысленно масштабирует SWOT-анализ. Перераспределение бюджета, как следует из вышесказанного, переворачивает коллективный контент. Поэтому управление брендом искажает социометрический ребрендинг:
 </p>
@@ -24,14 +24,10 @@
 <p class="text text-strategy">Можно предположить, что изменение глобальной стратегии поддерживает экспериментальный метод изучения рынка. Традиционный канал стабилизирует product placement, осознавая социальную ответственность бизнеса. По сути, комплексный анализ ситуации довольно неоднозначен.</p>
  <div class="about-slider swiper-container">
  <div class="about-slider__wrapper swiper-wrapper">
-        <div class="about-slider__slide swiper-slide">
-            <img class="figure-about__image figure-img img-fluid d-block" src="uploads/sean-pollock-PhYq704ffdA-unsplash 1.jpg"
+        <div class="about-slider__slide slide swiper-slide" v-for="(aboutItem, index) in aboutList">
+            <img class="slide__image figure-img img-fluid d-block" :src="aboutItem.image"
             alt="">
-        </div>
-        <div class="about-slider__slide swiper-slide">
-            <img class="figure-about__image figure-img img-fluid d-block" src="uploads/sean-pollock-PhYq704ffdA-unsplash 1.jpg"
-            alt="">
-        </div>
+        </div> 
 </div>
 </div>
 <span class="slider__position">1 / 15</span>
