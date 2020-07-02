@@ -14,8 +14,32 @@ $phone-back_hover : rgba(1, 87, 108, 0.75);
 $language-back: #99bcc4;
 $language-back_hover: #b3cdd3;
 
-@function rem($size) {
-  @return $size / $root-font-size * 1rem;
+@font-face {
+  font-family: 'noto_sansbold';
+  src: url('../fonts/notosans-bold-webfont.woff2') format('woff2'), url('../fonts/notosans-bold-webfont.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'noto_sanslight';
+  src: url('../fonts/notosans-light-webfont.woff2') format('woff2'), url('../fonts/notosans-light-webfont.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'noto_sansregular';
+  src: url('../fonts/notosans-regular-webfont.woff2') format('woff2'), url('../fonts/notosans-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'noto_sanssemibold';
+  src: url('../fonts/notosans-semibold-webfont.woff2') format('woff2'), url('../fonts/notosans-semibold-webfont.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
 }
 
 .header {
