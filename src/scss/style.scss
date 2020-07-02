@@ -168,24 +168,24 @@ main {
 
 @media (max-width: 1440px) {
   .container {
-    min-width: 988px + $padding;
+    max-width: 988px + $padding;
   }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
   .container {
-    min-width: 940px;
+    max-width: 940px + $padding;
   }
 }
 
-@media (min-width: 321px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .container {
-    min-width: 688px;
+    max-width: 688px + $padding;
   }
 }
 
-@media (min-width: 320px) {
+@media (max-width: 320px) {
   .container {
-    min-width: 290px;
+    max-width: 290px;
   }
 }
