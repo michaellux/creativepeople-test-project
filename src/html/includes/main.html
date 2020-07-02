@@ -1,46 +1,50 @@
 <main class="main container">
-<h2 class="main__about-title">О нас</h2>
-<nav class="main__navigation navigation">
+<h2 class="main__about-title col-2">О нас</h2>
+<nav class="main__navigation navigation col-5">
     <ul class="navigation__menu">
-        <li class="menu__item d-inline"><a class="menu__itemlink" href="#main_information">Основная информация<object type="image/svg+xml" data="img/arrow-menu.svg"></object></a></li>
-        <li class="menu__item d-inline"><a class="menu__itemlink" href="#news">Новости<object type="image/svg+xml" data="img/arrow-menu.svg"></object></a></li>
+        <li class="menu__item d-inline"><a class="menu__itemlink itemlink" href="#main_information">Основная информация<object class="itemlink__arrow" type="image/svg+xml" data="img/arrow-menu.svg"></object></a></li>
+        <li class="menu__item d-inline"><a class="menu__itemlink itemlink" href="#news">Новости<object class="itemlink__arrow" type="image/svg+xml" data="img/arrow-menu.svg"></object></a></li>
     </ul>
 </nav>
 <section class="section-about" id="about">
-<p class="text text-selection">
-    Селекция бренда, анализируя результаты рекламной кампании, осмысленно масштабирует SWOT-анализ. Перераспределение бюджета, как следует из вышесказанного, переворачивает коллективный контент. Поэтому управление брендом искажает социометрический ребрендинг:
+<p class="text text-selection col-8">
+    Селекция бренда, анализируя результаты рекламной кампании, осмысленно масштабирует SWOT-анализ. Перераспределение бюджета, как следует из&nbsp;вышесказанного, переворачивает коллективный контент. Поэтому<br>управление брендом искажает социометрический ребрендинг:
 </p>
-<ul class="text text-rebranding">
-    <li class="text text-rebranding__item">Управление брендом как искажение социометрического поиска</li>
-    <li class="text text-rebranding__item">Селекция бренда, анализируя результаты рекламной кампании бюджета как его основа</li>
-    <li class="text text-rebranding__item socio">Поэтому управление брендом искажает социометрический ребрендинг
+<ul class="text text-rebranding col-8">
+    <li class="text text-rebranding__item"><span>Управление брендом как искажение социометрического поиска</span> </li>
+    <li class="text text-rebranding__item"><span>Селекция бренда, анализируя результаты рекламной кампании бюджета<br>как его основа</span></li>
+    <li class="text text-rebranding__item socio"><span>Поэтому управление брендом искажает социометрический ребрендинг</span>
         <ul class="text text-sociorebranding"> 
-            <li class="text text-rebranding__item text-sociorebranding__item">Поэтому управление брендом искажает социометрический ребрендинг</li>
-            <li class="text text-rebranding__item text-sociorebranding__item">Селекция бренда, анализируя результаты рекламной кампании</li>
+            <li class="text text-rebranding__item text-sociorebranding__item"><span>Поэтому управление брендом искажает социометрический<br>ребрендинг</span></li>
+            <li class="text text-rebranding__item text-sociorebranding__item"><span>Селекция бренда, анализируя результаты рекламной кампании</span></li>
         </ul>
     </li>
-    <li class="text text-rebranding__item">Диверсификация бизнеса, на первый взгляд, изменяет рекламный макет, работая над проектом.</li>
+    <li class="text text-rebranding__item"><span>Диверсификация бизнеса, на первый взгляд, изменяет рекламный макет, работая над проектом.</span></li>
 </ul>
-<p class="text text-strategy">Можно предположить, что изменение глобальной стратегии поддерживает экспериментальный метод изучения рынка. Традиционный канал стабилизирует product placement, осознавая социальную ответственность бизнеса. По сути, комплексный анализ ситуации довольно неоднозначен.</p>
- <div class="about-slider swiper-container">
+<p class="text text-strategy col-8">Можно предположить, что изменение глобальной стратегии поддерживает экспериментальный метод изучения рынка. Традиционный канал стабилизирует product placement, осознавая социальную ответственность бизнеса. По&nbsp;сути, комплексный анализ ситуации довольно неоднозначен.</p>
+ <div class="about-slider swiper-container col-10">
  <div class="about-slider__wrapper swiper-wrapper">
         <div class="about-slider__slide slide swiper-slide" v-for="(aboutItem, index) in aboutList">
-            <img class="slide__image figure-img img-fluid d-block" :src="aboutItem.image"
+            <img class="slide__image img-fluid d-block" :src="aboutItem.image"
             alt="">
         </div> 
 </div>
 </div>
-<span class="slider__position">1 / 15</span>
-<p class="slide__caption d-inline">Подпись к блоку может быть опциональной. Можно вводить различные сноски и ссылки для блоков с фотографиями и видео</p>
-<button class="figure-about__prevbutton d-inline"><object type="image/svg+xml" data="img/arrow-slider-left.svg"></object></button>
-<button class="figure-about__nextbutton d-inline"><object type="image/svg+xml" data="img/arrow-slider-right.svg"></object></button>
-<p class="text text-aboutchangestrategy">Можно предположить, что изменение глобальной стратегии поддерживает экспериментальный метод изучения рынка. Традиционный канал стабилизирует product placement, осознавая социальную ответственность бизнеса. По сути, комплексный анализ ситуации довольно неоднозначен.</p>
-<blockquote class="quote-block">
-    <p class="text quote-block__text">У группы «Метро» огромный опыт в строительстве, помимо жилья мы занимались инфраструктурными, промышленными, социальными объектами. Компания выступала генеральным подрядчиком строительства «ЭкспоФорума», Депо «Южное», также мы строили «Музей железных дорог России». Наша Компания обладает всеми необходимыми ресурсами.</p>
+<div class="about-slider__dashboard dashboard col-10">
+    <span class="dashboard__position">1 / 15</span>
+    <p class="dashboard__slidecaption d-inline">Подпись к блоку может быть опциональной. Можно вводить различные сноски и ссылки для блоков с фотографиями и видео</p>
+    <div class="dashboard_navbuttons d-inline">
+        <button class="dashboard__prevbutton d-inline"><object type="image/svg+xml" data="img/arrow-slider-left.svg"></object></button>
+        <button class="dashboard__nextbutton d-inline"><object type="image/svg+xml" data="img/arrow-slider-right.svg"></object></button>
+    </div>
+</div>
+<p class="text text-aboutchangestrategy col-8">Можно предположить, что изменение глобальной стратегии поддерживает экспериментальный метод изучения рынка. Традиционный канал стабилизирует product placement, осознавая социальную ответственность бизнеса. По сути, комплексный анализ ситуации довольно неоднозначен.</p>
+<blockquote class="quote-block col-7">
+    <p class="text quote-block__text">У&nbsp;группы &laquo;Метро&raquo; огромный опыт в&nbsp;строительстве, помимо жилья мы&nbsp;занимались инфраструктурными, промышленными, социальными объектами. Компания выступала генеральным подрядчиком строительства &laquo;ЭкспоФорума&raquo;, Депо &laquo;Южное&raquo;, также мы&nbsp;строили &laquo;Музей железных дорог России&raquo;. Наша Компания обладает всеми необходимыми ресурсами.</p>
     <span class="text quote-block__author d-block">Геннадий Волковский</span>
     <span class="text quote-block__position d-block">Генеральный директор компании “Метро”</span>
 </blockquote>
-<p class="text text-prize">В 2018 году компания удостоилась главной архитектурной премии Европы — European Prize for Architecture. Знатоки архитектуры считают нашу компанию мастером выверенных фасадов.</p>
+<p class="text text-prize col-8">В&nbsp;2018 году компания удостоилась главной архитектурной премии Европы<br>&mdash; European Prize for Architecture. Знатоки архитектуры считают нашу компанию мастером выверенных фасадов.</p>
 </section>
 <div class="advantages d-flex justify-content-between" id="advantages" >
     <div v-for="advantage in advantagesList" class="advantages__item d-inline">
