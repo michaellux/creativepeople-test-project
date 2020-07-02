@@ -11,7 +11,7 @@ const mySwiper = new Swiper('.swiper-container', {
   direction: 'horizontal',
   loop: true,
   navigation: {
-    nextEl: '.figure-about__nextbutton',
-    prevEl: '.figure-about__prevbutton',
+    nextEl: '.dashboard__nextbutton',
+    prevEl: '.dashboard__prevbutton',
   },
 });
