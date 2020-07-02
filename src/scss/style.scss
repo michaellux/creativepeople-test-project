@@ -192,19 +192,19 @@ main {
 
 @media (max-width: 1440px) {
   .container {
-    max-width: 988px + $padding;
+    max-width: 988px;
   }
 }
 
 @media (max-width: 1024px) {
   .container {
-    max-width: 940px + $padding;
+    max-width: 940px;
   }
 }
 
 @media (max-width: 768px) {
   .container {
-    max-width: 688px + $padding;
+    max-width: 688px;
   }
 }
 
