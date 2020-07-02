@@ -76,15 +76,45 @@ $marker: #01576c;
   height: rem(60px);
 }
 
+.additional-buttons__language-button {
+  background: $language-back;
+  opacity: 0.4;
+  border: none;
+  border-radius: rem(100px);
+  color: $text-and-icons_light;
+}
+
+.additional-buttons__phone-button {
+  position: relative;
+  background: $phone-back;
+  border: none;
+  border-radius: rem(100px);
+}
+
+.phone-button__icon {
+  position: absolute;
+  left: rem(20px);
+  right: rem(20px);
+  top: rem(20px);
+  bottom: rem(20px);
+}
+
 main {
   margin-top: rem(90px);
 }
 
 .main__about-title {
+  padding: 0;
   margin-bottom: rem(50px);
+  font-family: 'noto_sansbold', sans-serif;
   font-weight: bold;
   font-size: rem(45px);
   line-height: rem(65px);
+  color: $header;
+}
+
+.main__navigation {
+  padding: 0;
 }
 
 .navigation__menu {
@@ -96,54 +126,106 @@ main {
   margin-bottom: rem(80px);
 }
 
-.text {
-  font-style: normal;
-  font-weight: 300;
+.menu__itemlink {
+  position: relative;
+  font-family: 'noto_sanssemibold', sans-serif;
+  color: $text-and-icons_dark;
   font-size: rem(18px);
+  line-height: rem(24px);
+}
+
+.itemlink__arrow {
+  position: absolute;
+  right: rem(-20px);
+  bottom: rem(5px);
+}
+
+.section-about {
+  padding: 0;
+}
+
+.dashboard {
+  display: flex;
+  flex-basis: rem(820px);
+  justify-content: space-between;
+  padding-top: rem(20px);
+  padding-left: 0;
+  padding-right: 0; 
+}
+
+.dashboard__position {
+  flex-basis: rem(64px);
+}
+
+.dashboard__slidecaption {
+  flex-basis: rem(568px);
+}
+
+.dashboard__prevbutton,
+.dashboard__nextbutton {
+  width: rem(40px);
+  height: rem(40px);
+  border: none;
+  border-radius: $radius;
+  background: $controls-and-nav;
+}
+
+.text {
+  padding-left: 0;
+  font-family: 'noto_sanslight', sans-serif;
+  font-size: rem(18px);
+  letter-spacing: -0.01em;
   line-height: rem(25px);
   margin-bottom: rem(30px);
 }
 
 .text-rebranding {
-  padding: 0;
-  list-style-position: inside;
+  padding-left: rem(18px);
 }
 
 .text-rebranding__item {
   margin-bottom: rem(20px);
+  padding-left: rem(30px);
+}
+
+.text-rebranding__item::marker {
+  color: $marker;
 }
 
 .text-sociorebranding {
-  margin-top: rem(20px);
-  list-style-position: inside;
+  margin: rem(20px) 0;
+  list-style-type: disc;
   padding-left: rem(25px);
 }
 
 .text-strategy {
+  width: rem(652px);
   margin-bottom: rem(50px);
 }
 
-.about-slider,
-.about-slider__slide {
-  width: rem(820px);
-  height: rem(500px);
-  margin: 0;
-}
-
 .text-aboutchangestrategy {
+  width: rem(652px);
   margin: rem(70px) 0 rem(58px) 0;
 }
 
-.quote-block__text {
-  margin-bottom: rem(25px);
+.quote-block {
+  width: rem(531px);
+  padding: 0;
 }
 
 .quote-block__author {
   margin-bottom: 5px;
+  font-family: 'noto_sanssemibold';
+}
+
+.quote-block__position {
+  font-size: rem(14px);
 }
 
 .text-prize {
+  width: rem(852px);
   margin: rem(50px) 0;
+  padding: 0;
 }
 
 .advantages {
