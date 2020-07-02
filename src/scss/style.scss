@@ -8,6 +8,7 @@
 $root-font-size: 16px;
 
 $padding: 15px*2;
+$radius: rem(100px);
 
 $text-and-icons_dark: #000;
 $text-and-icons_light: #fff;
@@ -16,8 +17,9 @@ $controls-and-nav: #ff6c6c;
 $controls-and-nav_hover: rgba(255, 108, 108, 0.75);
 $phone-back : #01576c;
 $phone-back_hover : rgba(1, 87, 108, 0.75);
-$language-back: #99bcc4;
+$language-back: #01576c;
 $language-back_hover: #b3cdd3;
+$marker: #01576c;
 
 @font-face {
   font-family: 'noto_sansbold';
@@ -49,10 +51,16 @@ $language-back_hover: #b3cdd3;
 
 .header {
   padding: rem(40px);
+  font-family: 'noto_sansbold', sans-serif;
+  font-size: rem(22px);
+  line-height: rem(24px);
 }
 
 .header__hamburger-button {
   position: relative;
+  background: #ff6c6c;
+  border: none;
+  border-radius: rem(100px);
 }
 
 .header__additional-buttons {
