@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import Vue from 'vue';
 
 const advantages = new Vue({
@@ -33,5 +34,26 @@ const advantages = new Vue({
     };
   },
 });
+
+const panels = document.querySelectorAll('.advantages__item');
+
+function toggleOpen() {
+  this.classList.toggle('open');
+}
+
+function toggleActive(e) {
+  console.log(e.propertyName);
+  if (e.propertyName.includes('flex')) {
+    if (this.classList.contains('collapsed')) {
+      this.classList.toggle('collapsed-active');
+    } else {
+      this.classList.toggle('open-active');
+    }
+    $(this).siblings().not('.open-active').toggleClass('collapsed');
+  }
+}
+
+panels.forEach((panel) => panel.addEventListener('click', toggleOpen));
+panels.forEach((panel) => panel.addEventListener('transitionend', toggleActive));
 
 export default advantages;

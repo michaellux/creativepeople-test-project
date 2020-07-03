@@ -150,7 +150,7 @@ main {
   justify-content: space-between;
   padding-top: rem(20px);
   padding-left: 0;
-  padding-right: 0; 
+  padding-right: 0;
 }
 
 .dashboard__position {
@@ -215,7 +215,7 @@ main {
 
 .quote-block__author {
   margin-bottom: 5px;
-  font-family: 'noto_sanssemibold';
+  font-family: 'noto_sanssemibold', sans-serif;
 }
 
 .quote-block__position {
@@ -229,17 +229,145 @@ main {
 }
 
 .advantages {
-  display: flex;
   flex-direction: row;
   align-items: flex-end;
   margin: rem(50px) 0 rem(120px) 0;
   height: rem(720px);
   background: url(/img/advantages-back.jpg);
+  background-size: cover;
   color: $text-and-icons_light;
 }
 
+@keyframes advantageButtonUp {
+  0% {
+    transform-origin: 10%;
+  }
+
+  100% {
+    transform-origin: 10%;
+    transform: translate(0, rem(-550px));
+    margin: 0;
+  }
+}
+
+.advantage__button {
+  margin-bottom: rem(48px);
+}
+
+.advantages__item.open-active .advantage__button {
+  animation: advantageButtonUp 3s ease 0s 1 normal none;
+  animation-fill-mode: forwards;
+}
+
 .advantages__item {
+  position: relative;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
+  transition: flex 0.8s ease;
+}
+
+.advantage__title {
+  margin-bottom: rem(10px);
+  font-family: 'noto_sansregular', sans-serif;
+  font-size: rem(14px);
+  line-height: rem(25px);
+  text-align: center;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+@keyframes titleUp {
+  0% {
+    transform-origin: 10%;
+  }
+
+  100% {
+    transform-origin: 10%;
+    transform: translate(0, rem(-340px));
+  }
+}
+
+.advantages__item.open-active .advantage__title {
+  animation: titleUp 4s ease 0s 1 normal none;
+  animation-fill-mode: forwards;
+}
+
+.advantage__subtitle {
+  font-family: 'noto_sanssemibold', sans-serif;
+  font-size: rem(20px);
+  line-height: rem(25px);
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+.advantages__item.open {
+  flex: 5;
+  font-size: 40px;
+}
+
+@keyframes fadeInAndUpText {
+  0% {
+    opacity: 0;
+    transform-origin: 10%;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+    transform-origin: 10%;
+    transform: translate(0, rem(-222px));
+  }
+}
+
+.advantage__text {
+  position: absolute;
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+}
+
+.advantages__item.open-active .text.advantage__text {
+  width: rem(280px);
+  animation: fadeInAndUpText 4s ease 0s 1 normal none;
+  animation-fill-mode: forwards;
+  align-self: center;
+}
+
+@keyframes subtitleUp {
+  0% {
+    transform-origin: 10%;
+  }
+
+  100% {
+    transform-origin: 10%;
+    transform: translate(0, rem(-320px));
+  }
+}
+
+.advantages__item.open-active .advantage__subtitle {
+  animation: subtitleUp 3s ease 0s 1 normal none;
+  animation-fill-mode: forwards;
+}
+
+@keyframes activeCollapse {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, -100%);
+  }
+}
+
+.advantages__item.collapsed.collapsed-active {
+  animation-name: activeCollapse;
+  transform-origin: 0% 0%;
+  transition: flex 0.8s ease;
 }
 
 .section-news__title {
