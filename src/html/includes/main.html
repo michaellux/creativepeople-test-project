@@ -49,11 +49,11 @@
 </section>
 </div>
 <div class="advantages d-flex justify-content-between" id="advantages" >
-    <div v-for="advantage in advantagesList" class="advantages__item d-inline">
-        <object class="advantage__button d-block" type="image/svg+xml" data="img/plus-open.svg"></object>
-        <span class="text advantage__title d-block">{{advantage.title}}</span>
-        <span class="text advantage__subtitle d-block">{{advantage.subtitle}}</span>
-        <p class="text advantage__text d-block">{{advantage.text}}</p>
+    <div v-for="advantage in advantagesList" class="advantages__item">
+        <object class="advantage__item advantage__button" type="image/svg+xml" data="img/plus-open.svg"></object>
+        <span class="text advantage__item advantage__title">{{advantage.title}}</span>
+        <span class="text advantage__item advantage__subtitle">{{advantage.subtitle}}</span>
+        <p class="text advantage__item advantage__text">{{advantage.text}}</p>
     </div>
 </div>
 <section class="section-news" id="news">
