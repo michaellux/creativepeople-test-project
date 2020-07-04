@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-import 'bootstrap';
 import Vue from 'vue';
 import Swiper from 'swiper';
 import About from './components/About';
