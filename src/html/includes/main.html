@@ -1,17 +1,20 @@
+
 <main class="main">
-<div class="container">
-<h2 class="main__about-title col-2">О нас</h2>
-<nav class="main__navigation navigation col-5">
+<div class="main__container container">
+<div class= "main__wrapper wrapper">
+<h2 class="main__about-title">О нас</h2>
+<nav class="main__navigation navigation">
     <ul class="navigation__menu">
         <li class="menu__item d-inline"><a class="menu__itemlink itemlink" href="#main_information">Основная информация<object class="itemlink__arrow" type="image/svg+xml" data="img/arrow-menu.svg"></object></a></li>
         <li class="menu__item d-inline"><a class="menu__itemlink itemlink" href="#news">Новости<object class="itemlink__arrow" type="image/svg+xml" data="img/arrow-menu.svg"></object></a></li>
     </ul>
 </nav>
 <section class="section-about" id="about">
-<p class="text text-selection col-8">
-    Селекция бренда, анализируя результаты рекламной кампании, осмысленно масштабирует SWOT-анализ. Перераспределение бюджета, как следует из&nbsp;вышесказанного, переворачивает коллективный контент. Поэтому<br>управление брендом искажает социометрический ребрендинг:
+<div class="section-about__wrapper wrapper">
+<p class="text text-selection">
+    Селекция бренда, анализируя результаты рекламной кампании, осмысленно масштабирует SWOT-анализ. Перераспределение бюджета, как следует из&nbsp;вышесказанного, переворачивает коллективный контент. Поэтому управление брендом искажает социометрический ребрендинг:
 </p>
-<ul class="text text-rebranding col-8">
+<ul class="text text-rebranding">
     <li class="text text-rebranding__item"><span>Управление брендом как искажение социометрического поиска</span> </li>
     <li class="text text-rebranding__item"><span>Селекция бренда, анализируя результаты рекламной кампании бюджета<br>как его основа</span></li>
     <li class="text text-rebranding__item socio"><span>Поэтому управление брендом искажает социометрический ребрендинг</span>
@@ -22,8 +25,8 @@
     </li>
     <li class="text text-rebranding__item"><span>Диверсификация бизнеса, на первый взгляд, изменяет рекламный макет, работая над проектом.</span></li>
 </ul>
-<p class="text text-strategy col-8">Можно предположить, что изменение глобальной стратегии поддерживает экспериментальный метод изучения рынка. Традиционный канал стабилизирует product placement, осознавая социальную ответственность бизнеса. По&nbsp;сути, комплексный анализ ситуации довольно неоднозначен.</p>
- <div class="about-slider swiper-container col-10">
+<p class="text text-strategy">Можно предположить, что изменение глобальной стратегии поддерживает экспериментальный метод изучения рынка. Традиционный канал стабилизирует product placement, осознавая социальную ответственность бизнеса. По&nbsp;сути, комплексный анализ ситуации довольно неоднозначен.</p>
+ <div class="about-slider swiper-container">
  <div class="about-slider__wrapper swiper-wrapper">
         <div class="about-slider__slide slide swiper-slide" v-for="(aboutItem, index) in aboutList">
             <img class="slide__image img-fluid d-block" :src="aboutItem.image"
@@ -31,7 +34,7 @@
         </div> 
 </div>
 </div>
-<div class="about-slider__dashboard dashboard col-10">
+<div class="about-slider__dashboard dashboard">
     <span class="dashboard__position">1 / 15</span>
     <p class="dashboard__slidecaption d-inline">Подпись к блоку может быть опциональной. Можно вводить различные сноски и ссылки для блоков с фотографиями и видео</p>
     <div class="dashboard_navbuttons d-inline">
@@ -39,16 +42,18 @@
         <button class="dashboard__nextbutton d-inline"><object type="image/svg+xml" data="img/arrow-slider-right.svg"></object></button>
     </div>
 </div>
-<p class="text text-aboutchangestrategy col-8">Можно предположить, что изменение глобальной стратегии поддерживает экспериментальный метод изучения рынка. Традиционный канал стабилизирует product placement, осознавая социальную ответственность бизнеса. По сути, комплексный анализ ситуации довольно неоднозначен.</p>
-<blockquote class="quote-block col-7">
+<p class="text text-aboutchangestrategy">Можно предположить, что изменение глобальной стратегии поддерживает экспериментальный метод изучения рынка. Традиционный канал стабилизирует product placement, осознавая социальную ответственность бизнеса. По сути, комплексный анализ ситуации довольно неоднозначен.</p>
+<blockquote class="quote-block">
     <p class="text quote-block__text">У&nbsp;группы &laquo;Метро&raquo; огромный опыт в&nbsp;строительстве, помимо жилья мы&nbsp;занимались инфраструктурными, промышленными, социальными объектами. Компания выступала генеральным подрядчиком строительства &laquo;ЭкспоФорума&raquo;, Депо &laquo;Южное&raquo;, также мы&nbsp;строили &laquo;Музей железных дорог России&raquo;. Наша Компания обладает всеми необходимыми ресурсами.</p>
     <span class="text quote-block__author d-block">Геннадий Волковский</span>
     <span class="text quote-block__position d-block">Генеральный директор компании “Метро”</span>
 </blockquote>
-<p class="text text-prize col-8">В&nbsp;2018 году компания удостоилась главной архитектурной премии Европы<br>&mdash; European Prize for Architecture. Знатоки архитектуры считают нашу компанию мастером выверенных фасадов.</p>
+<p class="text text-prize">В&nbsp;2018 году компания удостоилась главной архитектурной премии Европы<br>&mdash; European Prize for Architecture. Знатоки архитектуры считают нашу компанию мастером выверенных фасадов.</p>
+</div>
 </section>
 </div>
-<div class="advantages d-flex justify-content-between" id="advantages" >
+</div>
+<div class="advantages justify-content-between" id="advantages" >
     <div v-for="advantage in advantagesList" class="advantages__item">
         <object class="advantage__item advantage__button" type="image/svg+xml" data="img/plus-open.svg"></object>
         <span class="text advantage__item advantage__title">{{advantage.title}}</span>
@@ -57,15 +62,17 @@
     </div>
 </div>
 <section class="section-news" id="news">
+<div class="section-news__container container">
+<div class="section-news__wrapper wrapper">
 <h3 class="section-news__title">Новости</h3>
 <nav class="section-news__navigation navigation">
-<div class="filter d-inline">
+<div class="filter">
 <select class="filter-year" v-model="selectedYear">
     <option class="filter-year__title" value="">Все годы</option>
     <option class="filter-year__option" v-for="year in years" :value="year">{{ year }} год</option>
 </select>
 </div>
-<div class="filter d-inline">
+<div class="filter">
     <select class="filter-month" v-model="selectedMonth">
         <option class="filter-month__title" value="">Все месяцы</option>
         <option class="filter-month__month" v-for="month in months" :value="month">{{ month }}</option>
@@ -81,5 +88,7 @@
         </article>
     </div>
     <button class="section-news__loadmore-button">Загрузить ещё</button>
+    </div>
+    </div>
 </section>
 </main>
