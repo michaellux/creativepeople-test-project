@@ -14,9 +14,9 @@ $text-and-icons_light: #fff;
 $header: #333;
 $controls-and-nav: #ff6c6c;
 $controls-and-nav_hover: rgba(255, 108, 108, 0.75);
-$phone-back : #01576c;
-$phone-back_hover : rgba(1, 87, 108, 0.75);
-$language-back: #01576c;
+$phone-back: #01576c;
+$phone-back_hover: rgba(1, 87, 108, 0.75);
+$language-back: #99bcc4;
 $language-back_hover: #b3cdd3;
 $marker: #01576c;
 
@@ -80,6 +80,24 @@ body {
   line-height: rem(24px);
 }
 
+.button {
+  position: relative;
+  z-index: 1;
+}
+
+.button:hover,
+.button:focus,
+.button:visited:hover,
+.button:visited:active,
+.button:visited:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+.button__iconwrapper {
+  display: inline-block;
+}
+
 .header__hamburger-button {
   position: relative;
   background: #ff6c6c;
@@ -87,7 +105,14 @@ body {
   border-radius: rem(100px);
 }
 
+.icon {
+  position: relative;
+  z-index: -1;
+}
+
 .header__logo {
+  position: relative;
+  top: 5px;
   margin: 0;
 }
 
@@ -102,14 +127,26 @@ body {
 .additional-buttons__phone-button {
   width: rem(60px);
   height: rem(60px);
+  cursor: pointer;
+}
+
+.header__hamburger-button:hover {
+  background-color: $controls-and-nav_hover;
 }
 
 .additional-buttons__language-button {
+  font-family: 'noto_sansbold', sans-serif;
+  font-size: rem(22px);
+  line-height: rem(24px);
+  letter-spacing: 0.01em;
   background: $language-back;
-  opacity: 0.4;
   border: none;
   border-radius: rem(100px);
   color: $text-and-icons_light;
+}
+
+.additional-buttons__language-button:hover {
+  background-color: $language-back_hover;
 }
 
 .additional-buttons__phone-button {
@@ -117,6 +154,10 @@ body {
   background: $phone-back;
   border: none;
   border-radius: rem(100px);
+}
+
+.additional-buttons__phone-button:hover {
+  background-color: $phone-back_hover;
 }
 
 .phone-button__icon {
