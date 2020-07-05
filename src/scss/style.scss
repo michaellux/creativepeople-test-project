@@ -572,6 +572,36 @@ body {
   height: rem(50px);
 }
 
+.footer {
+  padding: rem(60px) 0 rem(56px) 0;
+  font-family: 'noto_sanslight', sans-serif;
+  font-size: rem(18px);
+  line-height: rem(24px);
+  letter-spacing: -0.01em;
+}
+
+.footer__wrapper {
+  grid-template-areas: "copyright ... creator";
+}
+
+.footer_about-sitecompany {
+  grid-area: copyright;
+  grid-column: span 3;
+}
+
+.footer__whocreate {
+  grid-area: creator;
+  grid-column: 10 / span 3;
+  margin: 0;
+  text-align: right;
+}
+
+.whocreate__company {
+  font-family: 'noto_sanssemibold', sans-serif;
+  font-style: normal;
+  color: $controls-and-nav;
+}
+
 @media (max-width: 1024px) {
   .container {
     max-width: 940px;

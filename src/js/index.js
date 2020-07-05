@@ -5,7 +5,10 @@ import About from './components/About';
 import Advantages from './components/Advantages';
 import News from './components/News';
 
-// eslint-disable-next-line no-unused-vars
+const foryear = new Vue({
+  el: '#footer',
+});
+
 const mySwiper = new Swiper('.swiper-container', {
   direction: 'horizontal',
   loop: true,
