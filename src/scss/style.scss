@@ -90,6 +90,7 @@ body {
 .button {
   position: relative;
   z-index: 1;
+  cursor: pointer;
 }
 
 .button:hover,
@@ -134,7 +135,6 @@ body {
 .additional-buttons__phone-button {
   width: rem(60px);
   height: rem(60px);
-  cursor: pointer;
 }
 
 .header__hamburger-button:hover {
@@ -212,6 +212,7 @@ body {
   width: rem(375px);
   justify-content: space-between;
   padding: 0;
+  margin-top: 0;
   margin-bottom: rem(80px);
   list-style-type: none;
 }
@@ -248,17 +249,6 @@ body {
     "text_prize ...";
 }
 
-.text-selection {
-  grid-area: text_selection;
-  grid-column: span 8;
-}
-
-.text-rebranding {
-  grid-area: text_rebranding;
-  grid-column: span 8;
-  padding-left: rem(18px);
-}
-
 .text {
   padding-left: 0;
   font-family: 'noto_sanslight', sans-serif;
@@ -268,25 +258,37 @@ body {
   margin-bottom: rem(30px);
 }
 
+.text-selection {
+  grid-area: text_selection;
+  grid-column: span 8;
+  margin-top: 0;
+}
+
+.text-rebranding {
+  grid-area: text_rebranding;
+  grid-column: span 8;
+  padding-left: rem(18px);
+  margin-top: 0;
+  margin-bottom: rem(10px);
+}
+
 .text-rebranding__item {
   margin-bottom: rem(20px);
   padding-left: rem(30px);
-}
-
-.text-rebranding__item::marker {
   color: $marker;
 }
 
 .text-sociorebranding {
   margin: rem(20px) 0;
   list-style-type: disc;
-  padding-left: rem(25px);
+  padding-left: rem(20px);
 }
 
 .text-strategy {
   grid-area: text_strategy;
   grid-column: span 8;
   width: rem(652px);
+  margin-top: 0;
   margin-bottom: rem(50px);
 }
 
@@ -298,7 +300,8 @@ body {
 
 .slide__image {
   width: rem(820px);
-  height: auto;
+  height: rem(500px);
+  vertical-align: bottom;
 }
 
 .dashboard {
@@ -314,10 +317,20 @@ body {
 
 .dashboard__position {
   flex-basis: rem(64px);
+  font-family: 'noto_sanssemibold', sans-serif;
+  font-size: rem(14px);
+  line-height: rem(18px);
+  margin-top: rem(1px);
 }
 
 .dashboard__slidecaption {
   flex-basis: rem(568px);
+  font-family: 'noto_sanslight', sans-serif;
+  font-size: rem(14px);
+  line-height: rem(18px);
+  letter-spacing: -0.01em;
+  margin-top: 0;
+  margin-bottom: rem(4px);
 }
 
 .dashboard__prevbutton,
@@ -327,6 +340,24 @@ body {
   border: none;
   border-radius: $radius;
   background: $controls-and-nav;
+  font-size: rem(14px);
+  line-height: rem(18px);
+}
+
+.prevbutton__icon,
+.nextbutton__icon {
+  position: absolute;
+  top: rem(14px);
+  right: rem(14px);
+  bottom: rem(14px);
+}
+
+.prevbutton__icon {
+  left: rem(12px);
+}
+
+.nextbutton__icon {
+  left: rem(14px);
 }
 
 .text-aboutchangestrategy {
@@ -336,11 +367,30 @@ body {
   margin: rem(70px) 0 rem(58px) 0;
 }
 
+.quote-block::before {
+  display: block;
+  content: ' ';
+  background-image: url('../img/quote.svg');
+  background-size: rem(12px) rem(15px);
+  width: rem(22px);
+  height: rem(15px);
+  position: relative;
+  top: rem(5px);
+  left: rem(-44px);
+}
+
 .quote-block {
   grid-area: blockquote;
   grid-column: span 7;
   width: rem(531px);
+  margin-top: 0;
+  margin-bottom: 0;
   padding: 0;
+}
+
+.quote-block__text {
+  margin-top: 0;
+  margin-bottom: rem(25px);
 }
 
 .quote-block__author {
@@ -350,6 +400,8 @@ body {
 
 .quote-block__position {
   font-size: rem(14px);
+  display: block;
+  margin-bottom: 0;
 }
 
 .text-prize {
@@ -364,7 +416,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
-  margin: rem(50px) 0 rem(120px) 0;
+  margin: 0 0 rem(120px) 0;
   height: rem(720px);
   background: url(/img/advantages-back.jpg);
   background-size: cover;
