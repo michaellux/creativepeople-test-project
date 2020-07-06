@@ -35,7 +35,7 @@ const advantages = new Vue({
   },
 });
 
-const panels = document.querySelectorAll('.advantages__item');
+const panels = document.querySelectorAll('.advantage__items');
 
 function toggleOpen() {
   this.classList.toggle('open');

@@ -423,35 +423,38 @@ body {
   color: $text-and-icons_light;
 }
 
-@keyframes advantageButtonUp {
-  0% {
-    transform-origin: 10%;
-  }
-
-  100% {
-    transform-origin: 10%;
-    transform: translate(0, rem(-550px));
-    margin: 0;
-  }
-}
-
-.advantage__button {
-  margin-bottom: rem(48px);
-}
-
-.advantages__item.open-active .advantage__button {
-  animation: advantageButtonUp 3s ease 0s 1 normal none;
-  animation-fill-mode: forwards;
-}
-
-.advantages__item {
+.advantage__items {
   position: relative;
   display: flex;
   flex: 1;
-  justify-content: center;
   flex-direction: column;
   text-align: center;
+}
+
+.advantage__items:hover {
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.advantage__items.open {
+  flex: 5;
+}
+
+.advantage__items:not(.collapsed) {
   transition: flex 0.8s ease;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.advantage__items.collapsed:not(.open) .advantage__item {
+  position: absolute;
+}
+
+.advantage__button {
+  background: transparent;
+  color: $text-and-icons_light;
+  border: none;
+  margin-bottom: rem(48px);
 }
 
 .advantage__title {
@@ -464,6 +467,41 @@ body {
   text-transform: uppercase;
 }
 
+.advantage__subtitle {
+  font-family: 'noto_sanssemibold', sans-serif;
+  font-size: rem(20px);
+  line-height: rem(25px);
+  text-align: center;
+  letter-spacing: -0.01em;
+}
+
+.advantage__text {
+  position: absolute;
+  visibility: hidden;
+  height: 0;
+  margin: 0;
+}
+
+/*** При клике на плюс - разворачивание блока ***/
+
+/* Поднимаем кнопку */
+@keyframes advantageButtonUp {
+  0% {
+    transform-origin: 10%;
+  }
+
+  100% {
+    transform: translate(0, rem(-550px)) rotate(45deg);
+    margin: 0;
+  }
+}
+
+.advantage__items.open-active .advantage__button {
+  animation: advantageButtonUp 3s ease 0s 1 normal none;
+  animation-fill-mode: forwards;
+}
+
+/* Поднимаем заголовок */
 @keyframes titleUp {
   0% {
     transform-origin: 10%;
@@ -475,24 +513,12 @@ body {
   }
 }
 
-.advantages__item.open-active .advantage__title {
+.advantage__items.open-active .advantage__title {
   animation: titleUp 4s ease 0s 1 normal none;
   animation-fill-mode: forwards;
 }
 
-.advantage__subtitle {
-  font-family: 'noto_sanssemibold', sans-serif;
-  font-size: rem(20px);
-  line-height: rem(25px);
-  text-align: center;
-  letter-spacing: -0.01em;
-}
-
-.advantages__item.open {
-  flex: 5;
-  font-size: 40px;
-}
-
+/* Поднимаем и плавно отображаем текст */
 @keyframes fadeInAndUpText {
   0% {
     opacity: 0;
@@ -505,24 +531,18 @@ body {
     visibility: visible;
     height: 100%;
     transform-origin: 10%;
-    transform: translate(0, rem(-222px));
+    transform: translate(0, rem(400px));
   }
 }
 
-.advantage__text {
-  position: absolute;
-  visibility: hidden;
-  height: 0;
-  margin: 0;
-}
-
-.advantages__item.open-active .text.advantage__text {
+.advantage__items.open-active .text.advantage__text {
   width: rem(280px);
   animation: fadeInAndUpText 4s ease 0s 1 normal none;
   animation-fill-mode: forwards;
   align-self: center;
 }
 
+/* Поднимаем подзаголовок */
 @keyframes subtitleUp {
   0% {
     transform-origin: 10%;
@@ -534,25 +554,81 @@ body {
   }
 }
 
-.advantages__item.open-active .advantage__subtitle {
+.advantage__items.open-active .advantage__subtitle {
   animation: subtitleUp 3s ease 0s 1 normal none;
   animation-fill-mode: forwards;
 }
 
-@keyframes activeCollapse {
+/*** При клике на плюс - остальные блоки сворачиваются ***/
+
+/* Поднимаем весь блок */
+@keyframes collapsed {
   0% {
-    transform: translate(0, 0);
+    transform: translateY(0) rotate(0deg);
   }
 
   100% {
-    transform: translate(0, -100%);
+    transform: translateY(rem(-350px)) rotate(-90deg);
   }
 }
 
-.advantages__item.collapsed.collapsed-active {
-  animation-name: activeCollapse;
-  transform-origin: 0% 0%;
-  transition: flex 0.8s ease;
+.advantage__items.collapsed:not(.open) {
+  animation-name: collapsed;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+/* Убираем кнопку и подзаголовок */
+@keyframes collapsedItems {
+  0% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+
+  50% {
+    width: 50%;
+    height: 50%;
+    opacity: 0.5;
+  }
+
+  100% {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+}
+
+.advantage__items.collapsed:not(.open) .advantage__button,
+.advantage__items.collapsed:not(.open) .advantage__subtitle {
+  animation-name: collapsedItems;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+/* Добавляем ширины заголовку */
+@keyframes collapsedTitle {
+  0% {
+    width: initial;
+  }
+
+  25% {
+    width: rem(50px);
+  }
+
+  50% {
+    width: rem(100px);
+  }
+
+  100% {
+    width: rem(200px);
+  }
+}
+
+.advantage__items.collapsed:not(.open) .advantage__title {
+  animation: collapsedTitle;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
 }
 
 .section-news__wrapper {

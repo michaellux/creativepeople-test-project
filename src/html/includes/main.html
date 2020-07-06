@@ -145,12 +145,16 @@
     </div>
   </div>
   <div class="advantages justify-content-between" id="advantages">
-    <div v-for="advantage in advantagesList" class="advantages__item">
+    <div v-for="advantage in advantagesList" class="advantage__items">
+    <button class="advantage__item advantage__button button">
+    <span class="button__iconwrapper">
       <object
-        class="advantage__item advantage__button"
+        class="advantagebutton__icon icon"
         type="image/svg+xml"
         data="img/plus-open.svg"
       ></object>
+      </span>
+      </button>
       <span class="text advantage__item advantage__title"
         >{{advantage.title}}</span
       >
