@@ -1,11 +1,24 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
+/* eslint-disable no-new */
 import Vue from 'vue';
 import Swiper from 'swiper';
 import About from './components/About';
 import Advantages from './components/Advantages';
 import News from './components/News';
 
-const nav = new Vue({
+let prevScrollpos = window.pageYOffset;
+window.onscroll = () => {
+  const currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    $('.header').css('top', 0);
+  } else {
+    $('.header').css('top', '-140px');
+  }
+  prevScrollpos = currentScrollPos;
+};
+
+new Vue({
   el: '#navigation',
   data() {
     return {
@@ -30,11 +43,11 @@ const nav = new Vue({
   },
 });
 
-const foryear = new Vue({
+new Vue({
   el: '#footer',
 });
 
-const mySwiper = new Swiper('.swiper-container', {
+new Swiper('.swiper-container', {
   direction: 'horizontal',
   loop: true,
   navigation: {

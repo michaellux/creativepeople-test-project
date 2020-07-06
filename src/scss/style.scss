@@ -78,6 +78,13 @@ body {
   font-family: 'noto_sansbold', sans-serif;
   font-size: rem(22px);
   line-height: rem(24px);
+  position: fixed;
+  background: #fff;
+  top: 0;
+  width: 100%;
+  transition: top 0.3s;
+  box-sizing: border-box;
+  z-index: 999;
 }
 
 .button {
