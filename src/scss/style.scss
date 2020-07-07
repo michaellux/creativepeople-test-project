@@ -65,6 +65,11 @@ $currentWorkArea: $workArea1440;
   font-style: normal;
 }
 
+::selection {
+  background: $controls_hover;
+  color: white;
+}
+
 body {
   margin: 0;
 }
