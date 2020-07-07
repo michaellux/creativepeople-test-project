@@ -119,6 +119,13 @@ body {
   z-index: -1;
 }
 
+.header__title {
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+}
+
 .header__logo {
   position: relative;
   top: 5px;
