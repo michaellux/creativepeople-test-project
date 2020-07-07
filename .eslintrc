@@ -1,3 +1,6 @@
 {
-   "extends": ["airbnb-base", "plugin:vue/vue3-recommended"]
+   "extends": ["airbnb-base", "plugin:vue/vue3-recommended"],
+   "rules": {
+      "linebreak-style": 0
+   }
 }
