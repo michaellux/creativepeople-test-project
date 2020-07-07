@@ -11,10 +11,13 @@ const news = new Vue({
       selectedMonth: '',
       selectedYear: '',
       showItemLimit: 9,
+      windowWidth: 0,
       newsList: [
         {
           id: '0',
           img: 'uploads/img1.jpg',
+          img1024: 'uploads/img1-1024w.jpg',
+          img768: 'uploads/img1-768w.jpg',
           title: 'Киберпреступники тратят на атаки до $50 000',
           text: 'Польша в суде ЕС добилась отмены разрешения Еврокомиссии на допуск «Газпрома» к мощностям Opal',
           date: '10.07.2019',
@@ -22,6 +25,8 @@ const news = new Vue({
         {
           id: '1',
           img: 'uploads/img2.jpg',
+          img1024: 'uploads/img2-1024w.jpg',
+          img768: 'uploads/img2-768w.jpg',
           title: '«Хотите, чтобы дети сотрудничали и решали проблемы? Тогда игра необходима»',
           text: 'Президент Lego Education рассказал “Ъ” о том, почему важно учить детей рисковать',
           date: '25.06.2019',
@@ -29,6 +34,8 @@ const news = new Vue({
         {
           id: '2',
           img: 'uploads/img3.jpg',
+          img1024: 'uploads/img3-1024w.jpg',
+          img768: 'uploads/img3-768w.jpg',
           title: 'Глобального среднего класса больше не становится',
           text: 'Замедление Китая и общая неопределенность заморозили активы населения',
           date: '31.05.2019',
@@ -36,6 +43,8 @@ const news = new Vue({
         {
           id: '3',
           img: 'uploads/img4.jpg',
+          img1024: 'uploads/img4-1024w.jpg',
+          img768: 'uploads/img4-768w.jpg',
           title: 'Скорость доступа к запрещенным сайтам ограничит суд',
           text: 'Польша в суде ЕС добилась отмены разрешения Еврокомиссии допуск «Газпрома» к мощностям Opal',
           date: '10.07.2019',
@@ -43,6 +52,8 @@ const news = new Vue({
         {
           id: '4',
           img: 'uploads/img5.jpg',
+          img1024: 'uploads/img5-1024w.jpg',
+          img768: 'uploads/img5-768w.jpg',
           title: 'Самая читающая страна в мире',
           text: 'Президент Lego Education рассказал “Ъ” о том, почему важно учить детей рисковать',
           date: '25.06.2019',
@@ -50,6 +61,8 @@ const news = new Vue({
         {
           id: '5',
           img: 'uploads/img6.jpg',
+          img1024: 'uploads/img6-1024w.jpg',
+          img768: 'uploads/img6-768w.jpg',
           title: 'Нуждаюсь в некоторой степени',
           text: 'Замедление Китая и общая неопределенность заморозили активы населения',
           date: '31.05.2019',
@@ -57,6 +70,8 @@ const news = new Vue({
         {
           id: '6',
           img: 'uploads/img7.jpg',
+          img1024: 'uploads/img7-1024w.jpg',
+          img768: 'uploads/img7-768w.jpg',
           title: 'Следственный комитет ищет экс-главу Северстали',
           text: 'Польша в суде ЕС добилась отмены разрешения Еврокомиссии на допуск «Газпрома» к мощностям Opal',
           date: '10.07.2019',
@@ -64,6 +79,8 @@ const news = new Vue({
         {
           id: '7',
           img: 'uploads/img8.jpg',
+          img1024: 'uploads/img8-1024w.jpg',
+          img768: 'uploads/img8-768w.jpg',
           title: '«ПИК» уходит с Лондонской фондовой биржи',
           text: 'Президент Lego Education рассказал “Ъ” о том, почему важно учить детей рисковать',
           date: '25.06.2019',
@@ -71,6 +88,8 @@ const news = new Vue({
         {
           id: '8',
           img: 'uploads/img9.jpg',
+          img1024: 'uploads/img9-1024w.jpg',
+          img768: 'uploads/img9-768w.jpg',
           title: 'Самая читающая страна в мире',
           text: 'Замедление Китая и общая неопределенность заморозили активы населения',
           date: '31.05.2019',
@@ -78,6 +97,8 @@ const news = new Vue({
         {
           id: '9',
           img: 'uploads/img1.jpg',
+          img1024: 'uploads/img1-1024w.jpg',
+          img768: 'uploads/img1-768w.jpg',
           title: 'Киберпреступники тратят на атаки до $50 000',
           text: 'Польша в суде ЕС добилась отмены разрешения Еврокомиссии на допуск «Газпрома» к мощностям Opal',
           date: '10.07.2019',
@@ -85,6 +106,8 @@ const news = new Vue({
         {
           id: '10',
           img: 'uploads/img2.jpg',
+          img1024: 'uploads/img2-1024w.jpg',
+          img768: 'uploads/img2-768w.jpg',
           title: '«Хотите, чтобы дети сотрудничали и решали проблемы? Тогда игра необходима»',
           text: 'Президент Lego Education рассказал “Ъ” о том, почему важно учить детей рисковать',
           date: '25.06.2019',
@@ -92,6 +115,8 @@ const news = new Vue({
         {
           id: '11',
           img: 'uploads/img3.jpg',
+          img1024: 'uploads/img3-1024w.jpg',
+          img768: 'uploads/img3-768w.jpg',
           title: 'Глобального среднего класса больше не становится',
           text: 'Замедление Китая и общая неопределенность заморозили активы населения',
           date: '31.05.2019',
@@ -99,6 +124,8 @@ const news = new Vue({
         {
           id: '12',
           img: 'uploads/img4.jpg',
+          img1024: 'uploads/img4-1024w.jpg',
+          img768: 'uploads/img4-768w.jpg',
           title: 'Скорость доступа к запрещенным сайтам ограничит суд',
           text: 'Польша в суде ЕС добилась отмены разрешения Еврокомиссии допуск «Газпрома» к мощностям Opal',
           date: '10.07.2019',
@@ -106,6 +133,8 @@ const news = new Vue({
         {
           id: '13',
           img: 'uploads/img5.jpg',
+          img1024: 'uploads/img5-1024w.jpg',
+          img768: 'uploads/img5-768w.jpg',
           title: 'Самая читающая страна в мире',
           text: 'Президент Lego Education рассказал “Ъ” о том, почему важно учить детей рисковать',
           date: '25.06.2019',
@@ -113,6 +142,8 @@ const news = new Vue({
         {
           id: '14',
           img: 'uploads/img6.jpg',
+          img1024: 'uploads/img6-1024w.jpg',
+          img768: 'uploads/img6-768w.jpg',
           title: 'Нуждаюсь в некоторой степени',
           text: 'Замедление Китая и общая неопределенность заморозили активы населения',
           date: '31.05.2019',
@@ -120,6 +151,8 @@ const news = new Vue({
         {
           id: '15',
           img: 'uploads/img7.jpg',
+          img1024: 'uploads/img7-1024w.jpg',
+          img768: 'uploads/img7-768w.jpg',
           title: 'Следственный комитет ищет экс-главу Северстали',
           text: 'Польша в суде ЕС добилась отмены разрешения Еврокомиссии на допуск «Газпрома» к мощностям Opal',
           date: '10.07.2019',
@@ -127,6 +160,8 @@ const news = new Vue({
         {
           id: '16',
           img: 'uploads/img8.jpg',
+          img1024: 'uploads/img8-1024w.jpg',
+          img768: 'uploads/img8-768w.jpg',
           title: '«ПИК» уходит с Лондонской фондовой биржи',
           text: 'Президент Lego Education рассказал “Ъ” о том, почему важно учить детей рисковать',
           date: '25.06.2019',
@@ -134,6 +169,8 @@ const news = new Vue({
         {
           id: '17',
           img: 'uploads/img9.jpg',
+          img1024: 'uploads/img9-1024w.jpg',
+          img768: 'uploads/img9-768w.jpg',
           title: 'Самая читающая страна в мире',
           text: 'Замедление Китая и общая неопределенность заморозили активы населения',
           date: '31.05.2019',
@@ -141,6 +178,8 @@ const news = new Vue({
         {
           id: '18',
           img: 'uploads/img1.jpg',
+          img1024: 'uploads/img1-1024w.jpg',
+          img768: 'uploads/img1-768w.jpg',
           title: 'Киберпреступники тратят на атаки до $50 000',
           text: 'Польша в суде ЕС добилась отмены разрешения Еврокомиссии на допуск «Газпрома» к мощностям Opal',
           date: '10.07.2019',
@@ -148,6 +187,8 @@ const news = new Vue({
         {
           id: '19',
           img: 'uploads/img2.jpg',
+          img1024: 'uploads/img2-1024w.jpg',
+          img768: 'uploads/img2-768w.jpg',
           title: '«Хотите, чтобы дети сотрудничали и решали проблемы? Тогда игра необходима»',
           text: 'Президент Lego Education рассказал “Ъ” о том, почему важно учить детей рисковать',
           date: '25.06.2019',
@@ -155,6 +196,8 @@ const news = new Vue({
         {
           id: '20',
           img: 'uploads/img3.jpg',
+          img1024: 'uploads/img3-1024w.jpg',
+          img768: 'uploads/img3-768w.jpg',
           title: 'Глобального среднего класса больше не становится',
           text: 'Замедление Китая и общая неопределенность заморозили активы населения',
           date: '31.05.2019',
@@ -162,6 +205,8 @@ const news = new Vue({
         {
           id: '21',
           img: 'uploads/img4.jpg',
+          img1024: 'uploads/img4-1024w.jpg',
+          img768: 'uploads/img4-768w.jpg',
           title: 'Скорость доступа к запрещенным сайтам ограничит суд',
           text: 'Польша в суде ЕС добилась отмены разрешения Еврокомиссии допуск «Газпрома» к мощностям Opal',
           date: '10.07.2019',
@@ -169,6 +214,8 @@ const news = new Vue({
         {
           id: '22',
           img: 'uploads/img5.jpg',
+          img1024: 'uploads/img5-1024w.jpg',
+          img768: 'uploads/img5-768w.jpg',
           title: 'Самая читающая страна в мире',
           text: 'Президент Lego Education рассказал “Ъ” о том, почему важно учить детей рисковать',
           date: '25.06.2019',
@@ -176,6 +223,8 @@ const news = new Vue({
         {
           id: '23',
           img: 'uploads/img6.jpg',
+          img1024: 'uploads/img6-1024w.jpg',
+          img768: 'uploads/img6-768w.jpg',
           title: 'Нуждаюсь в некоторой степени',
           text: 'Замедление Китая и общая неопределенность заморозили активы населения',
           date: '31.05.2019',
@@ -183,6 +232,8 @@ const news = new Vue({
         {
           id: '24',
           img: 'uploads/img7.jpg',
+          img1024: 'uploads/img7-1024w.jpg',
+          img768: 'uploads/img7-768w.jpg',
           title: 'Следственный комитет ищет экс-главу Северстали',
           text: 'Польша в суде ЕС добилась отмены разрешения Еврокомиссии на допуск «Газпрома» к мощностям Opal',
           date: '10.07.2019',
@@ -190,6 +241,8 @@ const news = new Vue({
         {
           id: '25',
           img: 'uploads/img8.jpg',
+          img1024: 'uploads/img8-1024w.jpg',
+          img768: 'uploads/img8-768w.jpg',
           title: '«ПИК» уходит с Лондонской фондовой биржи',
           text: 'Президент Lego Education рассказал “Ъ” о том, почему важно учить детей рисковать',
           date: '25.06.2019',
@@ -197,6 +250,8 @@ const news = new Vue({
         {
           id: '26',
           img: 'uploads/img9.jpg',
+          img1024: 'uploads/img9-1024w.jpg',
+          img768: 'uploads/img9-768w.jpg',
           title: 'Самая читающая страна в мире',
           text: 'Замедление Китая и общая неопределенность заморозили активы населения',
           date: '31.05.2019',
@@ -224,7 +279,17 @@ const news = new Vue({
       return filteredNews;
     },
   },
+  created() {
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+  },
+  unmounted() {
+    window.removeEventListener('resize', this.handleResize);
+  },
   methods: {
+    handleResize() {
+      this.windowWidth = window.innerWidth;
+    },
     getYear(dateString) {
       return Number(moment(dateString, 'DD.MM.YYYY').format('YYYY'));
     },

@@ -198,7 +198,9 @@
             v-for="(newsItem, index) in filteredNewsList.slice(0, showItemLimit)"
           >
           <a class="newsitem__link" href="/">
-            <img class="newsitem__image" :src="newsItem.img" alt="" />
+            <img v-if="windowWidth >= 1440" class="newsitem__image" :src="newsItem.img" alt="" />
+            <img v-if="windowWidth < 1440 && windowWidth >= 1024" class="newsitem__image" :src="newsItem.img1024" alt="" />
+            <img v-if="windowWidth < 1024 && windowWidth >= 768" class="newsitem__image" :src="newsItem.img768" alt="" />
             <h4 class="newsitem__title">{{newsItem.title}}</h4>
             <p class="text newsitem__text">{{newsItem.text}}</p>
             <datetime class="newsitem__date" :datetime="newsItem.date"
