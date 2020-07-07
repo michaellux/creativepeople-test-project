@@ -171,7 +171,7 @@
         <nav class="section-news__navigation navigation">
           <div class="navigation__filter navigation__year filter">
             <select class="filter__year" v-model="selectedYear">
-              <option class="filter-year__title" value="">Все годы</option>
+              <option class="filter-year__option filter-year__title" value="">Все годы</option>
               <option
                 class="filter-year__option"
                 v-for="year in years"
@@ -182,9 +182,9 @@
           </div>
           <div class="navigation__filter navigation__month filter">
             <select class="filter__month" v-model="selectedMonth">
-              <option class="filter-month__title" value="">Все месяцы</option>
+              <option class="filter-month__option filter-month__title" value="">Все месяцы</option>
               <option
-                class="filter-month__month"
+                class="filter-month__option"
                 v-for="month in months"
                 :value="month"
                 >{{ month }}</option
@@ -197,15 +197,17 @@
             class="section-news__newsitem newsitem"
             v-for="(newsItem, index) in filteredNewsList.slice(0, showItemLimit)"
           >
+          <a class="newsitem__link" href="/">
             <img class="newsitem__image" :src="newsItem.img" alt="" />
             <h4 class="newsitem__title">{{newsItem.title}}</h4>
             <p class="text newsitem__text">{{newsItem.text}}</p>
             <datetime class="newsitem__date" :datetime="newsItem.date"
               >{{newsItem.date}}</datetime
             >
+          </a>
           </article>
         </div>
-        <button class="section-news__loadmore-button" v-on:click="addItems();" v-show="showItemLimit < filteredNewsList.length">Загрузить ещё</button>
+        <button class="section-news__loadmore-button button" v-on:click="addItems();" v-show="showItemLimit < filteredNewsList.length">Загрузить ещё</button>
       </div>
     </div>
   </section>
