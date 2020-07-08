@@ -72,45 +72,7 @@
             ответственность бизнеса. По&nbsp;сути, комплексный анализ ситуации
             довольно неоднозначен.
           </p>
-          <div class="about-slider swiper-container">
-            <div class="about-slider__wrapper swiper-wrapper">
-              <div
-                class="about-slider__slide slide swiper-slide"
-                v-for="(aboutItem, index) in aboutList"
-              >
-                <img
-                  class="slide__image img-fluid d-block"
-                  :src="aboutItem.image"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-          <div class="about-slider__dashboard dashboard">
-            <span class="dashboard__position">1 / 15</span>
-            <p class="dashboard__slidecaption">
-              Подпись к блоку может быть опциональной. Можно вводить различные
-              сноски и ссылки для блоков с фотографиями и видео
-            </p>
-            <div class="dashboard_navbuttons">
-              <button class="dashboard__prevbutton prevbutton button">
-              <span class="button__iconwrapper">
-                <object class="prevbutton__icon icon"
-                  type="image/svg+xml"
-                  data="img/arrow-slider-left.svg"
-                ></object>
-              </span>
-              </button>
-              <button class="dashboard__nextbutton nextbutton button">
-              <span class="button__iconwrapper">
-                <object class="nextbutton__icon icon"
-                  type="image/svg+xml"
-                  data="img/arrow-slider-right.svg"
-                ></object>
-              </span>
-              </button>
-            </div>
-          </div>
+          <div id="slider-about"></div>
           <p class="text text-aboutchangestrategy">
             Можно предположить, что изменение глобальной стратегии поддерживает
             экспериментальный метод изучения рынка. Традиционный канал

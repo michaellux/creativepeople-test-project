@@ -2,8 +2,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-new */
 import Vue from 'vue';
-import Swiper from 'swiper';
-import About from './components/About';
+import About from './components/About.vue';
 import Advantages from './components/Advantages';
 import News from './components/News';
 
@@ -44,14 +43,11 @@ new Vue({
 });
 
 new Vue({
-  el: '#footer',
+  el: '#slider-about',
+  components: { About },
+  render: (a) => a(About),
 });
 
-new Swiper('.swiper-container', {
-  direction: 'horizontal',
-  loop: true,
-  navigation: {
-    nextEl: '.dashboard__nextbutton',
-    prevEl: '.dashboard__prevbutton',
-  },
+new Vue({
+  el: '#footer',
 });
