@@ -1,0 +1,82 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add swiper@5.4.5
+
+PATH: 
+  C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Michaellux.DESKTOP-MUO1A9P\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client;C:\Program Files\Intel\iCLS Client;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\dotnet;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn;C:\Program Files (x86)\Microsoft SQL Server\130\Tools\Binn;C:\Program Files\Microsoft SQL Server\130\DTS\Binn;C:\Program Files (x86)\Git\bi;.;C:\Program Files (x86)\Git\cmd;C:\WINDOWS\System32\OpenSSH;C:\Program Files (x86)\Yarn\bin;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\Java\jdk1.8.0_121\bin;C:\Program Files\Calibre2;C:\Program Files\nodejs;C:\Program Files (x86)\Microsoft SQL Server\150\Tools\Binn;C:\Program Files\Microsoft SQL Server\150\Tools\Binn;C:\Program Files\Microsoft SQL Server\150\DTS\Binn;C:\Program Files (x86)\Microsoft SQL Server\150\DTS\Binn;C:\ProgramData\chocolatey\bin;C:\tools\php74;C:\ProgramData\ComposerSetup\bin;C:\HashiCorp\Vagrant\bin;C:\Users\Michaellux.DESKTOP-MUO1A9P\AppData\Local\Programs\Python\Python36\Scripts;C:\Users\Michaellux.DESKTOP-MUO1A9P\AppData\Local\Programs\Python\Python36;C:\Ruby23-x64\bin;C:\Users\Michaellux.DESKTOP-MUO1A9P\AppData\Local\Microsoft\WindowsApps;H:\Android\sdk1\platform-tools;H:\Android\sdk1\tools;H:\Develop\Microsoft VS Code\bin;C:\Users\Michaellux.DESKTOP-MUO1A9P\AppData\Local\Yarn\bin;C:\Program Files\Java\jdk1.8.0_172\bin;H:\Develop\JetBrains\IntelliJ IDEA Community Edition 2019.2.2\bin;C:\Program Files\Java\jdk1.8.0_121;C:\Users\Michaellux.DESKTOP-MUO1A9P\AppData\Roaming\npm;C:\Users\Michaellux.DESKTOP-MUO1A9P\AppData\Roaming\Composer\vendor\bin;C:\tools\Cmder;C:\Program Files\Oracle\VirtualBox
+
+Yarn version: 
+  1.9.4
+
+Node version: 
+  14.2.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/eslint/-/eslint-7.4.0.tgz: ENOSPC: no space left on device, write
+
+npm manifest: 
+  {
+    "name": "creativepeople-test-project",
+    "version": "1.0.0",
+    "description": "Решение тестового задания от CreativePeople на вакансию «Frontend-разработчик»",
+    "private": true,
+    "scripts": {
+      "dev": "webpack --mode development",
+      "build": "webpack --mode production",
+      "watch": "webpack --mode development --watch",
+      "start": "webpack-dev-server --mode development --open",
+      "clear": "del-cli dist"
+    },
+    "keywords": [],
+    "author": "Sidachenko Michael (michaellux@yandex.ru, michaelluxwork@gmail.com)",
+    "license": "ISC",
+    "devDependencies": {
+      "@babel/core": "^7.10.3",
+      "@babel/preset-env": "^7.10.3",
+      "babel-core": "^6.26.3",
+      "babel-loader": "^8.1.0",
+      "babel-preset-env": "^1.7.0",
+      "copy-webpack-plugin": "^6.0.2",
+      "css-loader": "^3.6.0",
+      "del-cli": "^3.0.1",
+      "eslint": "^7.3.1",
+      "eslint-config-airbnb-base": "^14.2.0",
+      "eslint-loader": "^4.0.2",
+      "eslint-plugin-import": "^2.21.2",
+      "eslint-plugin-vue": "^7.0.0-alpha.7",
+      "html-webpack-plugin": "^4.3.0",
+      "mini-css-extract-plugin": "^0.9.0",
+      "node-sass": "^4.14.1",
+      "postcss-loader": "^3.0.0",
+      "raw-loader": "^4.0.1",
+      "sass": "^1.26.9",
+      "sass-loader": "^8.0.2",
+      "stylelint": "^13.6.1",
+      "stylelint-config-standard": "^20.0.0",
+      "stylelint-webpack-plugin": "^2.1.0",
+      "vue-loader": "^15.9.3",
+      "vue-template-compiler": "^2.6.11",
+      "webpack": "^4.43.0",
+      "webpack-cli": "^3.3.12",
+      "webpack-dev-server": "^3.11.0"
+    },
+    "dependencies": {
+      "cssnano": "^4.1.10",
+      "jquery": "^3.5.1",
+      "lodash": "^4.17.15",
+      "moment": "^2.27.0",
+      "moment-locales-webpack-plugin": "^1.2.0",
+      "popper.js": "^1.16.1",
+      "stylelint-scss": "^3.18.0",
+      "vue": "^2.6.11",
+      "vue-awesome-swiper": "^4.1.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
