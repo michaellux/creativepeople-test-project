@@ -425,10 +425,12 @@ body {
 .quote-block__author {
   margin-bottom: 5px;
   font-family: 'noto_sanssemibold', sans-serif;
+  letter-spacing: -0.01em;
 }
 
 .quote-block__position {
   font-size: rem(14px);
+  letter-spacing: -0.02em;
   display: block;
   margin-bottom: 0;
 }
@@ -881,8 +883,22 @@ body {
     margin-top: rem(200px);
   }
 
+  .about-slider {
+    width: rem(780px);
+  }
+
   .slide__image {
     width: rem(780px);
+  }
+
+  .quote-block {
+    width: inherit;
+    grid-column: span 9;
+    padding-right: rem(117px);
+  }
+
+  .text-prize {
+    width: inherit;
   }
 
   .section-news__news {
