@@ -107,7 +107,7 @@
     </div>
   </div>
   <div class="advantages justify-content-between" id="advantages">
-    <div v-for="advantage in advantagesList" class="advantage__items">
+    <div v-for="advantage in advantagesList" class="advantage__items" :class="advantage.class">
     <button class="advantage__item advantage__button button">
     <span class="button__iconwrapper">
       <object

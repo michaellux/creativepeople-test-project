@@ -462,9 +462,10 @@ body {
   text-align: center;
 }
 
-.advantage__items:hover {
-  background: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
+.advantage__views,
+.advantage__panorama,
+.advantage__ceil {
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .advantage__items.open {
