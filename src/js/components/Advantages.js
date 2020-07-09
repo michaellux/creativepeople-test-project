@@ -39,25 +39,46 @@ const advantages = new Vue({
   },
 });
 
+/* * Анимация панелей * */
+
+// Берём все панели
 const panels = document.querySelectorAll('.advantage__items');
 
+// По умолчанию они закрыты
+
+// Как только мы кликаем на одну из них она становится открытой;
+// если она уже открыта, то закрытой
 function toggleOpen() {
   this.classList.toggle('open');
+  $(this).siblings().not('.open').toggleClass('collapse');
 }
+panels.forEach((panel) => panel.addEventListener('click', toggleOpen));
 
+// После того как анимация для .open заканчивается срабатывает событие 'transitionend'
 function toggleActive(e) {
-  console.log(e.propertyName);
   if (e.propertyName.includes('flex')) {
-    if (this.classList.contains('collapsed')) {
-      this.classList.toggle('collapsed-active');
-    } else {
+    // Остальные блоки "сворачиваются"
+    $(this).siblings().not('.open-active').toggleClass('collapsed');
+
+    // То есть есть два типа блоков свёрнутые и открытые активные
+    this.classList.toggle('open-active');
+
+    if (this.classList.contains('expanded')) {
       this.classList.toggle('open-active');
     }
-    $(this).siblings().not('.open-active').toggleClass('collapsed');
   }
 }
 
-panels.forEach((panel) => panel.addEventListener('click', toggleOpen));
 panels.forEach((panel) => panel.addEventListener('transitionend', toggleActive));
+
+// Назначаем блоку, который является
+panels.forEach((panel) => panel
+  .addEventListener('animationend', () => {
+    console.log('animationend');
+    console.log(panel.classList);
+    if (panel.classList.contains('open')) {
+      panel.classList.add('expanded');
+    }
+  }));
 
 export default advantages;

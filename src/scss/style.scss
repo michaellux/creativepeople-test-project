@@ -460,6 +460,9 @@ body {
   flex: 1;
   flex-direction: column;
   text-align: center;
+  transition: flex 0.8s ease;
+  justify-content: flex-end;
+  height: 100%;
 }
 
 .advantage__views,
@@ -472,14 +475,13 @@ body {
   flex: 5;
 }
 
-.advantage__items:not(.collapsed) {
-  transition: flex 0.8s ease;
-  justify-content: flex-end;
-  height: 100%;
+.advantage__items:hover {
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
 }
 
-.advantage__items.collapsed:not(.open) .advantage__item {
-  position: absolute;
+.advantage__items.collapse:not(.open) {
+  height: 100%;
 }
 
 .advantage__button {
@@ -519,7 +521,7 @@ body {
 /* Поднимаем кнопку */
 @keyframes advantageButtonUp {
   0% {
-    transform-origin: 10%;
+    transform-origin: 50% 50%;
   }
 
   100% {
@@ -592,75 +594,76 @@ body {
 }
 
 /*** При клике на плюс - остальные блоки сворачиваются ***/
-
-/* Поднимаем весь блок */
-@keyframes collapsed {
+@keyframes collapse {
   0% {
-    transform: translateY(0) rotate(0deg);
-  }
-
-  100% {
-    transform: translateY(rem(-350px)) rotate(-90deg);
-  }
-}
-
-.advantage__items.collapsed:not(.open) {
-  animation-name: collapsed;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-}
-
-/* Убираем кнопку и подзаголовок */
-@keyframes collapsedItems {
-  0% {
-    width: 100%;
-    height: 100%;
-    opacity: 1;
+    color: inherit;
   }
 
   50% {
-    width: 50%;
-    height: 50%;
     opacity: 0.5;
   }
 
   100% {
+    color: transparent;
+    opacity: 1;
     width: 0;
     height: 0;
-    opacity: 0;
   }
 }
 
-.advantage__items.collapsed:not(.open) .advantage__button,
-.advantage__items.collapsed:not(.open) .advantage__subtitle {
-  animation-name: collapsedItems;
-  animation-duration: 3s;
+.advantage__items.collapse .advantage__subtitle,
+.advantage__items.collapse .advantage__button .button__iconwrapper .advantagebutton__icon {
+  animation: collapse 3s ease 0s 1 normal none;
   animation-fill-mode: forwards;
 }
 
-/* Добавляем ширины заголовку */
-@keyframes collapsedTitle {
+@keyframes collapsed {
   0% {
-    width: initial;
-  }
-
-  25% {
-    width: rem(50px);
+    transform: rotate(0);
   }
 
   50% {
-    width: rem(100px);
+    transform: translateY(-300px) rotate(-90deg);
   }
 
   100% {
-    width: rem(200px);
+    transform: translateY(-300px) rotate(-90deg);
   }
 }
 
-.advantage__items.collapsed:not(.open) .advantage__title {
-  animation: collapsedTitle;
-  animation-duration: 3s;
+.advantage__items.collapsed .advantage__title {
+  animation: collapsed 3s ease 0s 1 normal none;
   animation-fill-mode: forwards;
+}
+
+/*** При клике на крест - сворачивание блока ***/
+
+/* Опускаем кнопку на прежнее место */
+
+.advantage__items.expanded.open-active:not(.open) .advantage__button {
+  animation: advantageButtonUp 9s ease 0s 1 normal none;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+
+.advantage__items.expanded.open-active:not(.open) .advantage__title {
+  animation: titleUp 8s ease 0s 1 normal none;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+}
+
+.advantage__items.expanded.open-active:not(.open) .text.advantage__text {
+  width: rem(280px);
+  animation: fadeInAndUpText 8s ease 0s 1 normal none;
+  animation-fill-mode: forwards;
+  align-self: center;
+  animation-direction: reverse;
+}
+
+.advantage__items.expanded.open-active:not(.open) .advantage__subtitle {
+  animation: subtitleUp 6s ease 0s 1 normal none;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
 }
 
 .section-news__wrapper {
