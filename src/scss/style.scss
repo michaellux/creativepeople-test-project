@@ -569,7 +569,7 @@ body {
   }
 }
 
-.advantage__items.open-active .text.advantage__text {
+.advantage__items.open-active:not(.collapsed) .text.advantage__text {
   width: rem(280px);
   animation: fadeInAndUpText 4s ease 0s 1 normal none;
   animation-fill-mode: forwards;
@@ -633,6 +633,22 @@ body {
 
 .advantage__items.collapsed .advantage__title {
   animation: collapsed 3s ease 0s 1 normal none;
+  animation-fill-mode: forwards;
+  margin: 0;
+}
+
+@keyframes collapsedBlock {
+  0% {
+    flex: 1;
+  }
+
+  100% {
+    flex: 0;
+  }
+}
+
+.advantage__items.collapsed {
+  animation: collapsedBlock 3s ease 0s 1 normal none;
   animation-fill-mode: forwards;
 }
 
