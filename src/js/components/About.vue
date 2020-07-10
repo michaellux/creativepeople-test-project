@@ -10,7 +10,7 @@
         class="about-slider__slide slide swiper-slide"
       >
         <img
-          class="slide__image img-fluid d-block"
+          class="slide__image"
           :src="aboutItem.image"
           alt=""
         >
