@@ -208,7 +208,6 @@ body {
 }
 
 .main {
-  border-bottom: rem(2px) solid #01576c;
   box-sizing: border-box;
 }
 
@@ -775,6 +774,10 @@ body {
 .filter__year:hover .filter-year__option,
 .filter__month:hover .filter-month__option {
   color: $text-and-icons_dark;
+}
+
+.section-news__container {
+  border-bottom: rem(1px) solid #01576c;
 }
 
 .section-news__news {
