@@ -25,10 +25,12 @@ new Vue({
         {
           name: 'Основная информация',
           link: '#about',
+          class: 'menu__about',
         },
         {
           name: 'Новости',
           link: '#news',
+          class: 'menu__news',
         },
       ],
     };

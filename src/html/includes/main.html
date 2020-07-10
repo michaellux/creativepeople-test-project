@@ -4,7 +4,7 @@
       <h2 class="main__about-title">О нас</h2>
       <nav class="main__navigation navigation" id="navigation">
         <ul class="navigation__menu">
-          <li class="menu__item" v-for="item in items">
+          <li class="menu__item" v-for="item in items" :class="item.class">
             <a class="menu__itemlink itemlink" :href="item.link" @click="goToBlock"
               >{{item.name}}<object
                 class="itemlink__arrow"
