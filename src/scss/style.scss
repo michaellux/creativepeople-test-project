@@ -931,6 +931,10 @@ body {
 
     grid-template-columns: repeat($colamount, calcnewsarticlesize());
   }
+
+  .footer__whocreate {
+    grid-column: 9/span 4;
+  }
 }
 
 @media (max-width: 768px) {
