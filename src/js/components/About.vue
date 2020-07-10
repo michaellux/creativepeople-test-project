@@ -42,6 +42,7 @@
         </button>
       </div>
     </div>
+    <div class="about-slider__pagination swiper-pagination" />
   </div>
 </template>
 
@@ -146,8 +147,9 @@ export default {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
-        autoplay: {
-          delay: 2000,
+        pagination: {
+          el: '.about-slider__pagination',
+          clickable: true,
         },
       },
     };

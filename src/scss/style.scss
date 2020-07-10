@@ -74,6 +74,16 @@ body {
   margin: 0;
 }
 
+.swiper-pagination > .swiper-pagination-bullet {
+  opacity: 1;
+  border: white solid 1px;
+  display: inline-block;
+}
+
+.swiper-pagination > .swiper-pagination-bullet-active {
+  background-color: white;
+}
+
 .container {
   max-width: rem(988px);
   margin: 0 auto;
