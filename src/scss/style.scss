@@ -4,8 +4,8 @@
   @return $size / $root-font-size * 1rem;
 }
 
-@function colsize($workAreasize) {
-  @return rem(( $workAreasize - ($colgap * 11) ) / 12);
+@function colsize($workAreasize, $colgap, $colamount) {
+  @return rem(( $workAreasize - ($colgap * ($colamount - 1)) ) / $colamount);
 }
 
 $root-font-size: 16px;
@@ -27,6 +27,7 @@ $marker: #01576c;
 
 $workArea1440: 988px;
 $colgap: 20px;
+$colamount: 12;
 
 $currentWorkArea: $workArea1440;
 
@@ -91,7 +92,7 @@ body {
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(12, colsize($currentWorkArea));
+  grid-template-columns: repeat(12, colsize($currentWorkArea, $colgap, $colamount));
   column-gap: rem($colgap);
 }
 
@@ -310,7 +311,7 @@ body {
 
 .text-rebranding__item {
   margin-bottom: rem(20px);
-  padding-left: rem(30px);
+  padding-left: rem(12px);
   color: $marker;
 }
 
@@ -370,6 +371,11 @@ body {
   letter-spacing: -0.01em;
   margin-top: 0;
   margin-bottom: rem(4px);
+}
+
+.dashboard_navbuttons {
+  flex-basis: rem(115px);
+  text-align: end;
 }
 
 .dashboard__prevbutton,
@@ -902,11 +908,15 @@ body {
   $currentWorkArea: $workArea1024;
 
   .container {
-    max-width: $workArea1024;
+    max-width: $currentWorkArea;
+  }
+
+  .main__container {
+    margin: 0 rem(42px);
   }
 
   .wrapper {
-    grid-template-columns: repeat(12, colsize($currentWorkArea));
+    grid-template-columns: repeat(12, colsize($currentWorkArea, $colgap, $colamount));
   }
 
   .header {
@@ -950,52 +960,205 @@ body {
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
 
   $workArea768: 688px;
+
+  $colgap: 29.75px;
+
+  $colamount: 9;
 
   $currentWorkArea: $workArea768;
 
   .container {
-    max-width: $workArea768;
+    max-width: $currentWorkArea;
+  }
+
+  .main__container {
+    margin: 0 rem(40px);
   }
 
   .wrapper {
-    grid-template-columns: repeat(12, colsize($currentWorkArea));
+    grid-template-columns: repeat($colamount, colsize($currentWorkArea, $colgap, $colamount));
+    column-gap: 29.75px;
+  }
+
+  .header {
+    padding: rem(30px) rem(40px);
+  }
+
+  .main__about-title {
+    margin-top: rem(200px);
+    text-indent: -3px;
+  }
+
+  .main__navigation {
+    text-indent: -2px;
+  }
+
+  .text-selection,
+  .text-rebranding,
+  .text-strategy,
+  .about-slider,
+  .text-aboutchangestrategy {
+    grid-column: span 9;
+  }
+
+  .about-slider {
+    width: rem(688px);
+  }
+
+  .quote-block {
+    grid-column: span 8;
+    width: 565px;
+  }
+
+  .text-prize {
+    width: inherit;
+    grid-column: span 9;
+  }
+
+  .advantages {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .advantage__item {
+    margin: 0;
+  }
+
+  .advantage__items {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .advantage__title {
+    order: 1;
+  }
+
+  .advantage__subtitle {
+    order: 2;
+  }
+
+  .advantage__button {
+    order: 3;
+  }
+
+  .section-news__navigation {
+    grid-column: span 5;
   }
 
   .section-news__news {
     $colamount: 2;
 
+    grid-column: span 9;
+    column-gap: 29.75px;
+
     @function calcnewsarticlesize() {
       @return ($currentWorkArea - ($colgap * ($colamount - 1))) / $colamount;
     }
 
     grid-template-columns: repeat($colamount, calcnewsarticlesize());
   }
+
+  .section-news__loadmore-button {
+    margin-left: rem(-95px);
+  }
+
+  .footer__whocreate {
+    grid-column: 6/span 4;
+  }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 767px) {
 
   $workArea320: 290px;
 
   $currentWorkArea: $workArea320;
 
-  .container {
-    max-width: $workArea320;
+  $colamount: 1;
+
+  $colgap: 0;
+
+  .main__container,
+  .section-news__container {
+    margin: 0 rem(15px);
+  }
+
+  .header {
+    padding: 15px;
+  }
+
+  .additional-buttons__language-button {
+    display: none;
   }
 
   .wrapper {
-    grid-template-columns: repeat(12, colsize($currentWorkArea));
+    display: block;
+  }
+
+  .main__about-title {
+    margin-top: rem(110px);
+    margin-bottom: rem(30px);
+  }
+
+  .navigation__menu {
+    flex-direction: column;
+    margin-bottom: rem(52px);
+    width: inherit;
+  }
+
+  .menu__about {
+    margin-bottom: rem(20px);
+  }
+
+  .section-about {
+    grid-column: span 1;
+  }
+
+  .text-selection,
+  .text-rebranding,
+  .text-strategy,
+  .about-slider,
+  .text-aboutchangestrategy,
+  .section-news__loadmore-button {
+    grid-column: span 1;
+  }
+
+  .about-slider {
+    width: 100%;
+    height: rem(180px);
+  }
+
+  .about-slider__dashboard {
+    display: none;
+  }
+
+  .quote-block,
+  .text-prize {
+    grid-column: span 1;
+    width: inherit;
+  }
+
+  .advantages {
+    display: none;
   }
 
   .section-news__news {
-    $colamount: 1;
+    display: block;
+  }
 
-    @function calcnewsarticlesize() {
-      @return ($currentWorkArea - ($colgap * ($colamount - 1))) / $colamount;
-    }
+  .section-news__loadmore-button {
+    width: 100%;
+  }
 
-    grid-template-columns: repeat($colamount, calcnewsarticlesize());
+  .footer__wrapper {
+    text-align: center;
+  }
+
+  .footer_about-sitecompany {
+    margin-bottom: rem(30px);
   }
 }
