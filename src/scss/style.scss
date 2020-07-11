@@ -698,6 +698,18 @@ body {
   animation-direction: reverse;
 }
 
+.advantages_mobile {
+  width: 100%;
+  text-align: center;
+}
+
+.advantages__pagination .swiper-pagination-bullet {
+  width: 7px;
+  height: 7px;
+  border-radius: 100%;
+  margin: 0 10px;
+}
+
 .section-news__wrapper {
   grid-template-areas:
     "title ... ..."
@@ -1144,7 +1156,33 @@ body {
   }
 
   .advantages {
-    display: none;
+    box-sizing: border-box;
+    height: rem(417px);
+    align-items: center;
+    padding: rem(60px) rem(15px);
+    margin-bottom: rem(80px);
+  }
+
+  .advantage__subtitle {
+    margin-bottom: rem(40px);
+  }
+
+  .advantage__text {
+    height: initial;
+    position: relative;
+    visibility: initial;
+    margin-bottom: rem(80px);
+    font-size: rem(16px);
+    line-height: rem(22px);
+  }
+
+  .advantage__items {
+    flex: none;
+    border: none;
+  }
+
+  .advantage__views {
+    order: 1;
   }
 
   .section-news__news {

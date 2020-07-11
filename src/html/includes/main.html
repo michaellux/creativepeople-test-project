@@ -107,7 +107,7 @@
     </div>
   </div>
   <div class="advantages" id="advantages">
-    <div v-for="advantage in advantagesList" class="advantage__items" :class="advantage.class">
+    <div v-for="advantage in advantagesList" class="advantage__items" :class="advantage.class" v-if="windowWidth >= 768">
     <button class="advantage__item advantage__button button">
     <span class="button__iconwrapper">
       <object
@@ -125,6 +125,21 @@
       >
       <p class="text advantage__item advantage__text">{{advantage.text}}</p>
     </div>
+
+      <div class="advantages_mobile" v-if="windowWidth < 768">
+  <div class="swiper-container advantages__slider">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide advantage__items" v-for="advantage in advantagesList" :class="advantage.class">
+        <span class="text advantage__item advantage__title">{{advantage.title}}</span>
+        <span class="text advantage__item advantage__subtitle">{{advantage.subtitle}}</span>
+        <span class="text advantage__item advantage__text">{{advantage.text}}</span>
+      </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination advantages__pagination swiper-pagination-white"></div>
+  </div>
+  </div>
+    
   </div>
   <section class="section-news" id="news">
     <div class="section-news__container container">

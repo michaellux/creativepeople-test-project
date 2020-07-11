@@ -5,6 +5,7 @@ const advantages = new Vue({
   el: '#advantages',
   data() {
     return {
+      windowWidth: 0,
       advantagesList: [
         {
           id: 0,
@@ -36,6 +37,18 @@ const advantages = new Vue({
         },
       ],
     };
+  },
+  created() {
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+  },
+  unmounted() {
+    window.removeEventListener('resize', this.handleResize);
+  },
+  methods: {
+    handleResize() {
+      this.windowWidth = window.innerWidth;
+    },
   },
 });
 

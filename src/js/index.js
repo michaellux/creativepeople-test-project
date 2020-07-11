@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-new */
 import Vue from 'vue';
+import Swiper from 'swiper';
 import About from './components/About.vue';
 import Advantages from './components/Advantages';
 import News from './components/News';
@@ -16,6 +17,19 @@ window.onscroll = () => {
   }
   prevScrollpos = currentScrollPos;
 };
+
+const swiper = new Swiper('.advantages__slider', {
+  speed: 600,
+  parallax: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
 
 new Vue({
   el: '#navigation',
