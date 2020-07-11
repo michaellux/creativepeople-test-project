@@ -517,7 +517,7 @@ body {
 }
 
 .advantage__subtitle {
-  font-family: 'noto_sanssemibold', sans-serif;
+  font-family: 'noto_sansbold', sans-serif;
   font-size: rem(20px);
   line-height: rem(25px);
   text-align: center;
@@ -529,6 +529,7 @@ body {
   visibility: hidden;
   height: 0;
   margin: 0;
+  letter-spacing: -0.01em;
 }
 
 /*** При клике на плюс - разворачивание блока ***/
