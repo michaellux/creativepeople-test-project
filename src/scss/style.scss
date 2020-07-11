@@ -157,6 +157,15 @@ body {
   left: 44px;
 }
 
+.mobile .header__logo {
+  display: none;
+}
+
+.desktop .header__logo_mini,
+.tablet .header__logo_mini {
+  display: none;
+}
+
 .header__additional-buttons {
   display: flex;
   flex-basis: rem(150px);
@@ -1102,6 +1111,10 @@ body {
 
   .header {
     padding: 15px;
+  }
+
+  .header__additional-buttons {
+    flex-basis: auto;
   }
 
   .additional-buttons__language-button {
