@@ -46,6 +46,7 @@
   },
   "dependencies": {
     "cssnano": "^4.1.10",
+    "current-device": "^0.10.1",
     "jquery": "^3.5.1",
     "lodash": "^4.17.15",
     "moment": "^2.27.0",

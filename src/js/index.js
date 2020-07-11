@@ -3,6 +3,8 @@
 /* eslint-disable no-new */
 import Vue from 'vue';
 import Swiper from 'swiper';
+import device from 'current-device';
+
 import About from './components/About.vue';
 import Advantages from './components/Advantages';
 import News from './components/News';
