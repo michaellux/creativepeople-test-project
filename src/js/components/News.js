@@ -12,6 +12,8 @@ const news = new Vue({
       selectedYear: '',
       showItemLimit: 9,
       windowWidth: 0,
+      rowSize: 3,
+      filteredNews: null,
       newsList: [
         {
           id: '0',
@@ -278,10 +280,34 @@ const news = new Vue({
       }
       return filteredNews;
     },
+    makeRows() {
+      const row = [];
+      let i; let l;
+      const chunkSize = this.rowSize;
+      console.log(chunkSize);
+      console.log(this.filteredNews.length);
+      for (i = 0, l = this.filteredNewsList.length; i < l; i += chunkSize) {
+        row.push(this.filteredNews.slice(i, i + chunkSize));
+      }
+      console.log(row);
+      return row;
+    },
+  },
+  watch: {
+    windowWidth(width) {
+      if (width >= 1024) {
+        this.rowSize = 3;
+      } else if (width < 1024 && width >= 768) {
+        this.rowSize = 2;
+      } else {
+        this.rowSize = 1;
+      }
+    },
   },
   created() {
     window.addEventListener('resize', this.handleResize);
     this.handleResize();
+    this.filteredNews = this.filteredNewsList;
   },
   unmounted() {
     window.removeEventListener('resize', this.handleResize);
