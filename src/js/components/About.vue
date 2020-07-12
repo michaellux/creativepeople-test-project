@@ -36,7 +36,8 @@
         </button>
         <button
           v-show="activeslide !== aboutList.length"
-          class="swiper-button-next dashboard__nextbutton nextbutton button">
+          class="swiper-button-next dashboard__nextbutton nextbutton button"
+        >
           <span class="button__iconwrapper">
             <object
               class="nextbutton__icon icon"
@@ -47,7 +48,7 @@
         </button>
       </div>
     </div>
-    <div class="about-slider__pagination swiper-pagination" />
+    <div v-if="windowWidth < 768" class="about-slider__pagination swiper-pagination" />
   </div>
 </template>
 
@@ -68,6 +69,7 @@ export default {
   data() {
     return {
       activeslide: 1,
+      windowWidth: 0,
       aboutList: [
         {
           id: '0',
@@ -159,7 +161,18 @@ export default {
       },
     };
   },
+  created() {
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+    this.filteredNews = this.filteredNewsList;
+  },
+  unmounted() {
+    window.removeEventListener('resize', this.handleResize);
+  },
   methods: {
+    handleResize() {
+      this.windowWidth = window.innerWidth;
+    },
     handleSwiperSlideChange(event) {
       this.activeslide = this.aboutswiper.activeIndex + 1;
     },
