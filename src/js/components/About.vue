@@ -22,7 +22,10 @@
         {{ aboutList[activeslide - 1].caption }}
       </p>
       <div class="dashboard_navbuttons">
-        <button class="swiper-button-prev dashboard__prevbutton prevbutton button">
+        <button
+          v-show="activeslide !== 1"
+          class="swiper-button-prev dashboard__prevbutton prevbutton button"
+        >
           <span class="button__iconwrapper">
             <object
               class="prevbutton__icon icon"
@@ -31,7 +34,9 @@
             />
           </span>
         </button>
-        <button class="swiper-button-next dashboard__nextbutton nextbutton button">
+        <button
+          v-show="activeslide !== aboutList.length"
+          class="swiper-button-next dashboard__nextbutton nextbutton button">
           <span class="button__iconwrapper">
             <object
               class="nextbutton__icon icon"
