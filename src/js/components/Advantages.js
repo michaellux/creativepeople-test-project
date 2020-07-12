@@ -62,8 +62,24 @@ const panels = document.querySelectorAll('.advantage__items');
 // Как только мы кликаем на одну из них она становится открытой;
 // если она уже открыта, то закрытой
 function toggleOpen() {
-  this.classList.toggle('open');
-  $(this).siblings().not('.open').toggleClass('collapse');
+  if (this.classList.contains('collapsed')) {
+    $(this).removeClass('collapsed');
+    $(this).removeClass('collapse');
+
+    $(this).addClass('open');
+    $(this).addClass('open-active');
+
+    $(this).siblings('.expanded').removeClass('open');
+    $(this).siblings('.expanded').removeClass('open-active');
+    $(this).siblings('.expanded').addClass('collapse');
+    $(this).siblings('.expanded').addClass('collapsed');
+    $(this).siblings('.expanded').removeClass('expanded');
+  } else {
+    this.classList.toggle('open');
+  }
+
+  $(this).siblings().not('.open').not('.collapsed')
+    .addClass('collapse');
 }
 panels.forEach((panel) => panel.addEventListener('click', toggleOpen));
 
@@ -84,11 +100,8 @@ function toggleActive(e) {
 
 panels.forEach((panel) => panel.addEventListener('transitionend', toggleActive));
 
-// Назначаем блоку, который является
 panels.forEach((panel) => panel
   .addEventListener('animationend', () => {
-    console.log('animationend');
-    console.log(panel.classList);
     if (panel.classList.contains('open')) {
       panel.classList.add('expanded');
     }

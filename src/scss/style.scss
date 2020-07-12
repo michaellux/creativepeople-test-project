@@ -551,6 +551,15 @@ body {
   height: 0;
   margin: 0;
   letter-spacing: -0.01em;
+  z-index: 1;
+}
+
+.advantage__items.open-active:not(.expanded),
+.advantage__items.open-active:not(.expanded) + *,
+.advantages:hover .advantage__items.open-active:not(.expanded),
+.advantages .advantage__items.open-active:not(.expanded):hover,
+.advantages .advantage__items.open-active:not(.expanded):hover ~ .advantage__items {
+  pointer-events: none;
 }
 
 /*** При клике на плюс - разворачивание блока ***/
@@ -684,7 +693,7 @@ body {
   }
 }
 
-.advantage__items.collapsed {
+.advantage__items.collapsed:not(.open) {
   animation: collapsedBlock 3s ease 0s 1 normal none;
   animation-fill-mode: forwards;
 }
@@ -692,31 +701,75 @@ body {
 /*** При клике на крест - сворачивание блока ***/
 
 /* Опускаем кнопку на прежнее место */
+@keyframes advantageButtonDown {
+  0% {
+    transform: translate(0, rem(-550px)) rotate(45deg);
+    margin: 0;
+  }
+
+  100% {
+    transform-origin: 50% 50%;
+  }
+}
 
 .advantage__items.expanded.open-active:not(.open) .advantage__button {
-  animation: advantageButtonUp 9s ease 0s 1 normal none;
+  animation: advantageButtonDown 3s ease 0s 1 normal none;
   animation-fill-mode: forwards;
-  animation-direction: reverse;
+}
+
+@keyframes titleDown {
+  0% {
+    transform-origin: 10%;
+    transform: translate(0, rem(-340px));
+  }
+
+  100% {
+    transform-origin: 10%;
+  }
 }
 
 .advantage__items.expanded.open-active:not(.open) .advantage__title {
-  animation: titleUp 8s ease 0s 1 normal none;
+  animation: titleDown 4s ease 0s 1 normal none;
   animation-fill-mode: forwards;
-  animation-direction: reverse;
+}
+
+@keyframes fadeOutAndDownText {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+    transform-origin: 10%;
+    transform: translate(0, rem(400px));
+  }
+
+  100% {
+    opacity: 0;
+    transform-origin: 10%;
+    transform: translateY(40px);
+  }
 }
 
 .advantage__items.expanded.open-active:not(.open) .text.advantage__text {
   width: rem(280px);
-  animation: fadeInAndUpText 8s ease 0s 1 normal none;
+  animation: fadeOutAndDownText 4s ease 0s 1 normal none;
   animation-fill-mode: forwards;
   align-self: center;
-  animation-direction: reverse;
+}
+
+@keyframes subtitleDown {
+  0% {
+    transform-origin: 10%;
+    transform: translate(0, rem(-320px));
+  }
+
+  100% {
+    transform-origin: 10%;
+  }
 }
 
 .advantage__items.expanded.open-active:not(.open) .advantage__subtitle {
-  animation: subtitleUp 6s ease 0s 1 normal none;
+  animation: subtitleDown 3s ease 0s 1 normal none;
   animation-fill-mode: forwards;
-  animation-direction: reverse;
 }
 
 .advantages_mobile {
@@ -814,6 +867,11 @@ body {
 .filter__year:hover .filter-year__option,
 .filter__month:hover .filter-month__option {
   color: $text-and-icons_dark;
+}
+
+.section-news {
+  position: relative;
+  z-index: 10;
 }
 
 .section-news__container {
