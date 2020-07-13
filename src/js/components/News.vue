@@ -1,7 +1,10 @@
 <template>
   <div class="section-news__container container">
     <div class="section-news__wrapper wrapper">
-      <h3 class="section-news__title">
+      <h3
+        id="news-title"
+        class="section-news__title"
+      >
         Новости
       </h3>
       <nav class="section-news__navigation navigation">
@@ -33,29 +36,30 @@
           </md-field>
         </div>
         <div class="navigation__filter navigation__month filter">
-        <md-field class="filter__field">
-        <label
+          <md-field class="filter__field">
+            <label
               class="filter__label"
               for="months"
             >Все месяцы</label>
-          <md-select
-            v-model="selectedMonth"
-            class="filter__month" name="months"
-          >
-            <md-option
-              class="filter-month__option filter-month__title"
-              value=""
+            <md-select
+              v-model="selectedMonth"
+              class="filter__month"
+              name="months"
             >
-              Все месяцы
-            </md-option>
-            <md-option
-              v-for="month in months"
-              class="filter-month__option"
-              :value="month"
-            >
-              {{ month }}
-            </md-option>
-          </md-select>
+              <md-option
+                class="filter-month__option filter-month__title"
+                value=""
+              >
+                Все месяцы
+              </md-option>
+              <md-option
+                v-for="month in months"
+                class="filter-month__option"
+                :value="month"
+              >
+                {{ month }}
+              </md-option>
+            </md-select>
           </md-field>
         </div>
       </nav>
@@ -98,8 +102,9 @@
               >{{ newsItem.date }}</datetime>
             </a>
           </article>
-          <svg class="row__line"
+          <svg
             v-if="windowWidth >= 1440"
+            class="row__line"
             width="988px"
             height="2px"
             viewBox="0 0 988 2"
@@ -115,8 +120,9 @@
               stroke-dasharray="0.1, 5"
             />
           </svg>
-          <svg class="row__line"
+          <svg
             v-if="windowWidth < 1440 && windowWidth >= 1024"
+            class="row__line"
             width="940px"
             height="2px"
             viewBox="0 0 940 2"
@@ -132,8 +138,9 @@
               stroke-dasharray="0.1, 5"
             />
           </svg>
-          <svg class="row__line"
+          <svg
             v-if="windowWidth < 1024 && windowWidth >= 768"
+            class="row__line"
             width="688px"
             height="2px"
             viewBox="0 0 688 2"
@@ -149,8 +156,9 @@
               stroke-dasharray="0.1, 5"
             />
           </svg>
-          <svg class="row__line"
+          <svg
             v-if="windowWidth < 768"
+            class="row__line"
             width="290px"
             height="2px"
             viewBox="0 0 290 2"

@@ -44,7 +44,7 @@ new Vue({
         },
         {
           name: 'Новости',
-          link: '#news',
+          link: '#news-title',
           class: 'menu__news',
         },
       ],
