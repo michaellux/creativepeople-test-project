@@ -467,14 +467,17 @@ export default {
       }
       return filteredNews;
     },
+    cropFilteredNewsList() {
+      return this.filteredNewsList.slice(0, this.showItemLimit);
+    },
     makeRows() {
       const row = [];
       let i; let l;
       const chunkSize = this.rowSize;
       console.log(chunkSize);
       console.log(this.filteredNews.length);
-      for (i = 0, l = this.filteredNewsList.length; i < l; i += chunkSize) {
-        row.push(this.filteredNews.slice(i, i + chunkSize));
+      for (i = 0, l = this.cropFilteredNewsList.length; i < l; i += chunkSize) {
+        row.push(this.cropFilteredNewsList.slice(i, i + chunkSize));
       }
       console.log(row);
       return row;
