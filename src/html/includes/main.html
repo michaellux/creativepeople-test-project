@@ -142,66 +142,6 @@
     
   </div>
   <section class="section-news" id="news">
-    <div class="section-news__container container">
-      <div class="section-news__wrapper wrapper">
-        <h3 class="section-news__title">Новости</h3>
-        <nav class="section-news__navigation navigation">
-          <div class="navigation__filter navigation__year filter">
-            <select class="filter__year" v-model="selectedYear">
-              <option class="filter-year__option filter-year__title" value="">Все годы</option>
-              <option
-                class="filter-year__option"
-                v-for="year in years"
-                :value="year"
-                >{{ year }} год</option
-              >
-            </select>
-          </div>
-          <div class="navigation__filter navigation__month filter">
-            <select class="filter__month" v-model="selectedMonth">
-              <option class="filter-month__option filter-month__title" value="">Все месяцы</option>
-              <option
-                class="filter-month__option"
-                v-for="month in months"
-                :value="month"
-                >{{ month }}</option
-              >
-            </select>
-          </div>
-        </nav>
-        <div class="section-news__news">
-        <div class="section-news__row row" v-for="row in makeRows">
-          <article
-            class="section-news__newsitem newsitem"
-            v-for="(newsItem, index) in row"
-          >
-          <a class="newsitem__link" href="/">
-            <img v-if="windowWidth >= 1440" class="newsitem__image" :src="newsItem.img" alt="" />
-            <img v-if="windowWidth < 1440 && windowWidth >= 1024" class="newsitem__image" :src="newsItem.img1024" alt="" />
-            <img v-if="windowWidth < 1024 && windowWidth >= 768" class="newsitem__image" :src="newsItem.img768" alt="" />
-            <h4 class="newsitem__title">{{newsItem.title}}</h4>
-            <p class="text newsitem__text">{{newsItem.text}}</p>
-            <datetime class="newsitem__date" :datetime="newsItem.date"
-              >{{newsItem.date}}</datetime
-            >
-          </a>
-          </article>
-          <svg width="988px" height="2px" viewBox="0 0 988 2" v-if="windowWidth >= 1440">
-            <line x1="0" x2="988" y1="1" y2="1" stroke="hsla(0, 0%, 20%, 0.4)" stroke-width="1" stroke-linecap="square" stroke-dasharray="0.1, 5"/>
-          </svg>
-          <svg width="940px" height="2px" viewBox="0 0 940 2" v-if="windowWidth < 1440 && windowWidth >= 1024">
-            <line x1="0" x2="940" y1="1" y2="1" stroke="hsla(0, 0%, 20%, 0.4)" stroke-width="1" stroke-linecap="square" stroke-dasharray="0.1, 5"/>
-          </svg>
-          <svg width="688px" height="2px" viewBox="0 0 688 2" v-if="windowWidth < 1024 && windowWidth >= 768">
-            <line x1="0" x2="688" y1="1" y2="1" stroke="hsla(0, 0%, 20%, 0.4)" stroke-width="1" stroke-linecap="square" stroke-dasharray="0.1, 5"/>
-          </svg>
-          <svg width="290px" height="2px" viewBox="0 0 290 2" v-if="windowWidth < 768">
-            <line x1="0" x2="290" y1="1" y2="1" stroke="hsla(0, 0%, 20%, 0.4)" stroke-width="1" stroke-linecap="square" stroke-dasharray="0.1, 5"/>
-          </svg>
-          </div>
-        </div>
-        <button class="section-news__loadmore-button button" v-on:click="addItems();" v-show="showItemLimit < filteredNewsList.length">Загрузить ещё</button>
-      </div>
-    </div>
+    
   </section>
 </main>

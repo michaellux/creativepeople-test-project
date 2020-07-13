@@ -1,11 +1,198 @@
+<template>
+  <div class="section-news__container container">
+    <div class="section-news__wrapper wrapper">
+      <h3 class="section-news__title">
+        Новости
+      </h3>
+      <nav class="section-news__navigation navigation">
+        <div class="navigation__filter navigation__year filter">
+          <md-field class="filter__field">
+            <label
+              class="filter__label"
+              for="years"
+            >Все годы</label>
+            <md-select
+              v-model="selectedYear"
+              class="filter__year"
+              name="years"
+            >
+              <md-option
+                class="filter-year__option filter-year__title"
+                value=""
+              >
+                Все годы
+              </md-option>
+              <md-option
+                v-for="year in years"
+                class="filter-year__option"
+                :value="year"
+              >
+                {{ year }} год
+              </md-option>
+            </md-select>
+          </md-field>
+        </div>
+        <div class="navigation__filter navigation__month filter">
+        <md-field class="filter__field">
+        <label
+              class="filter__label"
+              for="months"
+            >Все месяцы</label>
+          <md-select
+            v-model="selectedMonth"
+            class="filter__month" name="months"
+          >
+            <md-option
+              class="filter-month__option filter-month__title"
+              value=""
+            >
+              Все месяцы
+            </md-option>
+            <md-option
+              v-for="month in months"
+              class="filter-month__option"
+              :value="month"
+            >
+              {{ month }}
+            </md-option>
+          </md-select>
+          </md-field>
+        </div>
+      </nav>
+      <div class="section-news__news">
+        <div
+          v-for="row in makeRows"
+          class="section-news__row row"
+        >
+          <article
+            v-for="(newsItem, index) in row"
+            class="section-news__newsitem newsitem"
+          >
+            <a
+              class="newsitem__link"
+              href="/"
+            >
+              <img
+                v-if="windowWidth >= 1440"
+                class="newsitem__image"
+                :src="newsItem.img"
+                alt=""
+              >
+              <img
+                v-if="windowWidth < 1440 && windowWidth >= 1024"
+                class="newsitem__image"
+                :src="newsItem.img1024"
+                alt=""
+              >
+              <img
+                v-if="windowWidth < 1024 && windowWidth >= 768"
+                class="newsitem__image"
+                :src="newsItem.img768"
+                alt=""
+              >
+              <h4 class="newsitem__title">{{ newsItem.title }}</h4>
+              <p class="text newsitem__text">{{ newsItem.text }}</p>
+              <datetime
+                class="newsitem__date"
+                :datetime="newsItem.date"
+              >{{ newsItem.date }}</datetime>
+            </a>
+          </article>
+          <svg
+            v-if="windowWidth >= 1440"
+            width="988px"
+            height="2px"
+            viewBox="0 0 988 2"
+          >
+            <line
+              x1="0"
+              x2="988"
+              y1="1"
+              y2="1"
+              stroke="hsla(0, 0%, 20%, 0.4)"
+              stroke-width="1"
+              stroke-linecap="square"
+              stroke-dasharray="0.1, 5"
+            />
+          </svg>
+          <svg
+            v-if="windowWidth < 1440 && windowWidth >= 1024"
+            width="940px"
+            height="2px"
+            viewBox="0 0 940 2"
+          >
+            <line
+              x1="0"
+              x2="940"
+              y1="1"
+              y2="1"
+              stroke="hsla(0, 0%, 20%, 0.4)"
+              stroke-width="1"
+              stroke-linecap="square"
+              stroke-dasharray="0.1, 5"
+            />
+          </svg>
+          <svg
+            v-if="windowWidth < 1024 && windowWidth >= 768"
+            width="688px"
+            height="2px"
+            viewBox="0 0 688 2"
+          >
+            <line
+              x1="0"
+              x2="688"
+              y1="1"
+              y2="1"
+              stroke="hsla(0, 0%, 20%, 0.4)"
+              stroke-width="1"
+              stroke-linecap="square"
+              stroke-dasharray="0.1, 5"
+            />
+          </svg>
+          <svg
+            v-if="windowWidth < 768"
+            width="290px"
+            height="2px"
+            viewBox="0 0 290 2"
+          >
+            <line
+              x1="0"
+              x2="290"
+              y1="1"
+              y2="1"
+              stroke="hsla(0, 0%, 20%, 0.4)"
+              stroke-width="1"
+              stroke-linecap="square"
+              stroke-dasharray="0.1, 5"
+            />
+          </svg>
+        </div>
+      </div>
+      <button
+        v-show="showItemLimit < filteredNewsList.length"
+        class="section-news__loadmore-button button"
+        @click="addItems();"
+      >
+        Загрузить ещё
+      </button>
+    </div>
+  </div>
+</template>
+
+<script>
 import Vue from 'vue';
+import VueMaterial from 'vue-material';
 import moment from 'moment';
 
 moment.locale('ru');
 moment().format();
 
-const news = new Vue({
-  el: '#news',
+Vue.use(VueMaterial);
+
+export default {
+  components: {
+    VueMaterial,
+  },
   data() {
     return {
       selectedMonth: '',
@@ -332,6 +519,5 @@ const news = new Vue({
       this.showItemLimit += 9;
     },
   },
-});
-
-export default news;
+};
+</script>
