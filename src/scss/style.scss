@@ -1,6 +1,4 @@
 @import "~swiper/swiper";
-@import "~vue-material/dist/theme/engine";
-@import "~vue-material/dist/theme/all";
 
 @function rem($size) {
   @return $size / $root-font-size * 1rem;
@@ -826,7 +824,9 @@ body {
 }
 
 .filter__year,
-.filter__month {
+.filter__month,
+.filter__field .filter__label,
+.filter__field .filter__label + .md-menu .md-input {
   border: none;
   font-family: 'noto_sanssemibold', sans-serif;
   font-size: rem(18px);
@@ -836,24 +836,77 @@ body {
   outline: none;
 }
 
+.filter__field .filter__label + .md-menu .md-input {
+  position: relative;
+  top: rem(-3px);
+  line-height: normal;
+}
+
+.navigation__filter .filter__field {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  min-height: auto;
+}
+
+.filter__field.md-theme-default .filter__label {
+  top: 0;
+  line-height: normal;
+  color: $text-and-icons_dark;
+}
+
+.navigation__filter .filter__field:hover .filter__label {
+  color: $nav-and-titles_hover;
+}
+
+.navigation__filter .filter__field.md-has-value .filter__label {
+  display: none;
+}
+
+.filter__field.md-theme-default.md-highlight.md-focused .filter__label {
+  color: $controls-and-nav;
+}
+
+.navigation__filter .filter__field.md-theme-default::before {
+  background-color: transparent;
+}
+
+.navigation__filter .filter__field::after {
+  height: 0;
+}
+
+.filter__year .md-icon,
+.filter__month .md-icon {
+  display: none;
+}
+
+.md-list-item.md-selected .md-list-item-text {
+  color: $controls-and-nav;
+}
+
+.md-list-item:hover .md-list-item-text {
+  color: $text-and-icons_light;
+}
+
 .filter__year {
   width: rem(110px);
-  background: transparent url(/img/arrow-filter-menu.svg) no-repeat rem(82px) rem(10px);
+  background: transparent url(/img/arrow-filter-menu.svg) no-repeat rem(90px) rem(10px);
 }
 
 .filter__year:hover {
-  background: transparent url(/img/arrow-filter-menu_hover.svg) no-repeat rem(82px) rem(10px);
+  background: transparent url(/img/arrow-filter-menu_hover.svg) no-repeat rem(90px) rem(10px);
 }
 
 .filter__month {
   grid-area: month;
   grid-column: span 2;
   width: rem(150px);
-  background: transparent url(/img/arrow-filter-menu.svg) no-repeat rem(113px) rem(10px);
+  background: transparent url(/img/arrow-filter-menu.svg) no-repeat rem(115px) rem(10px);
 }
 
 .filter__month:hover {
-  background: transparent url(/img/arrow-filter-menu_hover.svg) no-repeat rem(113px) rem(10px);
+  background: transparent url(/img/arrow-filter-menu_hover.svg) no-repeat rem(115px) rem(10px);
 }
 
 .filter__year:hover,
