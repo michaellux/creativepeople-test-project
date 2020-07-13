@@ -539,6 +539,7 @@ body {
 }
 
 .advantage__subtitle {
+  margin-bottom: rem(82px);
   font-family: 'noto_sansbold', sans-serif;
   font-size: rem(20px);
   line-height: rem(25px);
@@ -682,6 +683,7 @@ body {
   animation: collapsed 3s ease 0s 1 normal none;
   animation-fill-mode: forwards;
   margin: 0;
+  width: max-content;
 }
 
 @keyframes collapsedBlock {
