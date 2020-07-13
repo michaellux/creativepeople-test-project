@@ -953,6 +953,10 @@ body {
   grid-template-columns: repeat($colamount, calcnewsarticlesize());
 }
 
+.section-news__row:last-child .row__line {
+  display: none;
+}
+
 .newsitem {
   margin: rem(40px) 0 rem(38px) 0;
 }

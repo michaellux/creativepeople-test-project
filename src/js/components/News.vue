@@ -98,7 +98,7 @@
               >{{ newsItem.date }}</datetime>
             </a>
           </article>
-          <svg
+          <svg class="row__line"
             v-if="windowWidth >= 1440"
             width="988px"
             height="2px"
@@ -115,7 +115,7 @@
               stroke-dasharray="0.1, 5"
             />
           </svg>
-          <svg
+          <svg class="row__line"
             v-if="windowWidth < 1440 && windowWidth >= 1024"
             width="940px"
             height="2px"
@@ -132,7 +132,7 @@
               stroke-dasharray="0.1, 5"
             />
           </svg>
-          <svg
+          <svg class="row__line"
             v-if="windowWidth < 1024 && windowWidth >= 768"
             width="688px"
             height="2px"
@@ -149,7 +149,7 @@
               stroke-dasharray="0.1, 5"
             />
           </svg>
-          <svg
+          <svg class="row__line"
             v-if="windowWidth < 768"
             width="290px"
             height="2px"
