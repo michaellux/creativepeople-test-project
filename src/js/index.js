@@ -2,12 +2,15 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-new */
 import Vue from 'vue';
+import VueMaterial from 'vue-material';
 import Swiper from 'swiper';
 import device from 'current-device';
 
 import About from './components/About.vue';
 import Advantages from './components/Advantages';
 import News from './components/News';
+
+Vue.use(VueMaterial);
 
 let prevScrollpos = window.pageYOffset;
 window.onscroll = () => {
