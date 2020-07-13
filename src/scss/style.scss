@@ -248,7 +248,7 @@ body {
   list-style-type: none;
 }
 
-.menu__itemlink {
+.navigation__menu .menu__item .menu__itemlink {
   position: relative;
   font-family: 'noto_sanssemibold', sans-serif;
   color: $text-and-icons_dark;
@@ -257,8 +257,9 @@ body {
   text-decoration: none;
 }
 
-.menu__itemlink:hover {
+.navigation__menu .menu__item .menu__itemlink:hover {
   color: $nav-and-titles_hover;
+  text-decoration: none;
 }
 
 .itemlink__arrow {
@@ -956,7 +957,8 @@ body {
   margin: rem(40px) 0 rem(38px) 0;
 }
 
-.newsitem__link {
+.newsitem__link,
+.newsitem .newsitem__link:hover {
   text-decoration: none;
 }
 
