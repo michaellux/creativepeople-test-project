@@ -562,11 +562,7 @@ body {
   z-index: 1;
 }
 
-.advantage__items.open-active:not(.expanded),
-.advantage__items.open-active:not(.expanded) + *,
-.advantages:hover .advantage__items.open-active:not(.expanded),
-.advantages .advantage__items.open-active:not(.expanded):hover,
-.advantages .advantage__items.open-active:not(.expanded):hover ~ .advantage__items {
+.advantage__items.animated {
   pointer-events: none;
 }
 

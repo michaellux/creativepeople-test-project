@@ -88,7 +88,14 @@ function toggleOpen(e) {
 panels.forEach((panel) => panel.addEventListener('click', toggleOpen));
 
 panels.forEach((panel) => panel
+  .addEventListener('animationstart', () => {
+    $('.advantage__items').addClass('animated');
+  }));
+
+panels.forEach((panel) => panel
   .addEventListener('animationend', () => {
+    $('.advantage__items').removeClass('animated');
+
     if (panel.classList.contains('open')) {
       panel.classList.add('expanded');
     }
