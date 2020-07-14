@@ -1013,8 +1013,20 @@ body {
   display: none;
 }
 
+@keyframes fadeInNews {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .newsitem {
   margin: rem(40px) 0 rem(38px) 0;
+  animation: fadeInNews 2s ease 0s 1 normal none;
+  animation-fill-mode: forwards;
 }
 
 .newsitem__link,
