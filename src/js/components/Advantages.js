@@ -61,7 +61,7 @@ const panels = document.querySelectorAll('.advantage__items');
 
 // Как только мы кликаем на одну из них она становится открытой;
 // если она уже открыта, то закрытой
-function toggleOpen() {
+function toggleOpen(e) {
   if (this.classList.contains('collapsed')) {
     $(this).removeClass('collapsed');
     $(this).removeClass('collapse');
@@ -75,30 +75,17 @@ function toggleOpen() {
     $(this).siblings('.expanded').addClass('collapsed');
     $(this).siblings('.expanded').removeClass('expanded');
   } else {
+    console.log(`toggleopen ${e.target.classList}`);
     this.classList.toggle('open');
+    this.classList.toggle('open-active');
+    $(this).siblings().addClass('collapse');
+    $(this).siblings().not('.open-active').toggleClass('collapsed');
   }
 
   $(this).siblings().not('.open').not('.collapsed')
     .addClass('collapse');
 }
 panels.forEach((panel) => panel.addEventListener('click', toggleOpen));
-
-// После того как анимация для .open заканчивается срабатывает событие 'transitionend'
-function toggleActive(e) {
-  if (e.propertyName.includes('flex')) {
-    // Остальные блоки "сворачиваются"
-    $(this).siblings().not('.open-active').toggleClass('collapsed');
-
-    // То есть есть два типа блоков свёрнутые и открытые активные
-    this.classList.toggle('open-active');
-
-    if (this.classList.contains('expanded')) {
-      this.classList.toggle('open-active');
-    }
-  }
-}
-
-panels.forEach((panel) => panel.addEventListener('transitionend', toggleActive));
 
 panels.forEach((panel) => panel
   .addEventListener('animationend', () => {

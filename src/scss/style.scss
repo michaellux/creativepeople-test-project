@@ -509,7 +509,7 @@ body {
 }
 
 .advantage__items.open {
-  flex: 5;
+  flex: 1;
 }
 
 .advantage__items:hover {
@@ -518,6 +518,7 @@ body {
 }
 
 .advantage__items.collapse:not(.open) {
+  flex: 0;
   height: 100%;
 }
 
