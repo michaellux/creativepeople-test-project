@@ -501,6 +501,7 @@ body {
   transition: flex 0.8s ease;
   justify-content: flex-end;
   height: 100%;
+  box-sizing: content-box;
 }
 
 .advantage__views,
@@ -511,6 +512,7 @@ body {
 
 .advantage__items.open {
   flex: 1;
+  width: 85.34722222222222%;
 }
 
 .advantage__items:hover {
@@ -664,10 +666,19 @@ body {
   }
 }
 
+.advantage__items.collapse .advantage__button {
+  margin-bottom: 0;
+}
+
 .advantage__items.collapse .advantage__subtitle,
 .advantage__items.collapse .advantage__button .button__iconwrapper .advantagebutton__icon {
   animation: collapse 3s ease 0s 1 normal none;
   animation-fill-mode: forwards;
+}
+
+.advantage__items.collapse .advantage__subtitle,
+.advantage__items.collapse .advantage__text {
+  display: none;
 }
 
 @keyframes collapsed {
@@ -676,11 +687,11 @@ body {
   }
 
   50% {
-    transform: translateY(-300px) rotate(-90deg);
+    transform: translateX(0) translateY(-300px) rotate(-90deg);
   }
 
   100% {
-    transform: translateY(-300px) rotate(-90deg);
+    transform: rotate(-90deg);
   }
 }
 
@@ -704,6 +715,9 @@ body {
 .advantage__items.collapsed:not(.open) {
   animation: collapsedBlock 3s ease 0s 1 normal none;
   animation-fill-mode: forwards;
+  width: 4.791666666666667%;
+  justify-content: center;
+  align-items: center;
 }
 
 /*** При клике на крест - сворачивание блока ***/
