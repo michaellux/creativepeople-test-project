@@ -1228,11 +1228,23 @@ body {
 
   .main__about-title {
     margin-top: rem(200px);
-    text-indent: -3px;
+    text-indent: rem(-3px);
   }
 
   .main__navigation {
-    text-indent: -2px;
+    text-indent: rem(-2px);
+  }
+
+  .text-selection {
+    margin-left: rem(-2.5px);
+  }
+
+  .text-rebranding {
+    padding-left: rem(16.5px);
+  }
+
+  .text-strategy {
+    margin-left: rem(-2.5px);
   }
 
   .text-selection,
