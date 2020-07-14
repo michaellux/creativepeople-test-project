@@ -1189,6 +1189,10 @@ body {
     grid-template-columns: repeat($colamount, calcnewsarticlesize());
   }
 
+  .footer {
+    padding-bottom: rem(55px);
+  }
+
   .footer__whocreate {
     grid-column: 9/span 4;
   }
