@@ -74,6 +74,17 @@ function toggleOpen(e) {
     $(this).siblings('.expanded').addClass('collapse');
     $(this).siblings('.expanded').addClass('collapsed');
     $(this).siblings('.expanded').removeClass('expanded');
+  } else if (this.classList.contains('expanded')) {
+    $(this).addClass('close-active');
+    $(this).removeClass('open');
+    $(this).siblings('.collapse').addClass('collapsed-off');
+    $(this).siblings('.collapsed').removeClass('collapsed');
+    $(this).siblings('.collapse').removeClass('collapse');
+    setTimeout(() => {
+      $(this).removeClass('open-active');
+      $(this).removeClass('expanded');
+      $(this).removeClass('close-active');
+    }, 5000);
   } else {
     console.log(`toggleopen ${e.target.classList}`);
     this.classList.toggle('open');
@@ -81,9 +92,6 @@ function toggleOpen(e) {
     $(this).siblings().addClass('collapse');
     $(this).siblings().not('.open-active').toggleClass('collapsed');
   }
-
-  $(this).siblings().not('.open').not('.collapsed')
-    .addClass('collapse');
 }
 panels.forEach((panel) => panel.addEventListener('click', toggleOpen));
 
@@ -98,6 +106,12 @@ panels.forEach((panel) => panel
 
     if (panel.classList.contains('open')) {
       panel.classList.add('expanded');
+    }
+
+    if (panel.classList.contains('collapsed-off')) {
+      setTimeout(() => {
+        panel.classList.remove('collapsed-off');
+      }, 3000);
     }
   }));
 
