@@ -1730,8 +1730,22 @@ body {
     display: block;
   }
 
+  .section-news__title {
+    font-size: rem(25px);
+    line-height: rem(30px);
+  }
+
+  .filter__field .filter__label + .md-menu .md-input {
+    font-size: 16px;
+    line-height: 22px;
+  }
+
   .section-news__row {
     display: block;
+  }
+
+  .newsitem__title {
+    font-size: rem(20px);
   }
 
   .newsitem {
