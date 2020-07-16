@@ -1403,6 +1403,18 @@ body {
     width: 100%;
   }
 
+  @keyframes expandBlock {
+    0% {
+      width: 100%;
+      min-height: initial;
+    }
+
+    100% {
+      width: 100%;
+      min-height: 70.6%;
+    }
+  }
+
   @keyframes advantageButtonUp {
     0% {
       transform: translateY(rem(-310px)) rotate(45deg);
@@ -1423,7 +1435,7 @@ body {
     }
 
     100% {
-      transform: translateY(rem(-310px)) rotate(45deg);
+      transform: translateY(rem(-405px)) rotate(45deg);
       margin: 0;
       opacity: 1;
     }
@@ -1432,19 +1444,17 @@ body {
   @keyframes titleUp {
     0% {
       transform-origin: 10%;
-      transform: translateY(262px);
     }
 
     100% {
       transform-origin: 10%;
-      transform: translateY(0);
+      transform: translateY(140px);
     }
   }
 
   @keyframes subtitleUp {
     0% {
       transform-origin: 10%;
-      transform: translateY(rem(130px));
       opacity: 0;
     }
 
@@ -1462,7 +1472,7 @@ body {
 
     100% {
       transform-origin: 10%;
-      transform: translateY(rem(-85px));
+      transform: translateY(0);
       opacity: 1;
     }
   }
@@ -1491,7 +1501,7 @@ body {
       visibility: visible;
       height: 100%;
       transform-origin: 10%;
-      transform: translateY(rem(40px));
+      transform: translateY(rem(275px));
     }
   }
 
