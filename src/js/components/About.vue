@@ -16,6 +16,7 @@
         >
       </div>
     </div>
+    <div v-if="windowWidth < 768" class="about-slider__pagination swiper-pagination" />
     <div class="about-slider__dashboard dashboard">
       <span class="dashboard__position">{{ activeslide }} / {{ aboutList.length }}</span>
       <p class="dashboard__slidecaption">
@@ -48,7 +49,6 @@
         </button>
       </div>
     </div>
-    <div v-if="windowWidth < 768" class="about-slider__pagination swiper-pagination" />
   </div>
 </template>
 

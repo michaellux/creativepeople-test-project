@@ -467,6 +467,7 @@ body {
 .quote-block__author {
   margin-bottom: 5px;
   font-family: 'noto_sanssemibold', sans-serif;
+  font-weight: 600;
   letter-spacing: -0.01em;
 }
 
@@ -1654,14 +1655,44 @@ body {
     width: 100%;
   }
 
-  .about-slider__dashboard {
+  .about-slider .slide__image {
+    height: auto;
+  }
+
+  .dashboard__position,
+  .dashboard_navbuttons {
     display: none;
+  }
+
+  .dashboard__slidecaption {
+    margin-bottom: rem(2px);
+    text-align: center;
+    padding: 0 35px;
+    min-height: rem(72px);
+  }
+
+  .quote-block {
+    margin-right: 0;
+    margin-left: rem(38px);
+  }
+
+  .quote-block__text {
+    margin-bottom: rem(20px);
   }
 
   .quote-block,
   .text-prize {
     grid-column: span 1;
     width: inherit;
+  }
+
+  .text-prize {
+    margin-top: rem(40px);
+  }
+
+  .quote-block__position {
+    font-size: rem(14px);
+    line-height: rem(18px);
   }
 
   .advantages {
