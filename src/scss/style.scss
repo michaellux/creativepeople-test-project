@@ -1157,6 +1157,7 @@ body {
 .newsitem__text {
   margin: rem(15px) 0;
   font-size: rem(18px);
+  font-weight: 300;
   line-height: rem(24px);
   letter-spacing: -0.02em;
   color: $text-and-icons_dark;
@@ -1534,6 +1535,10 @@ body {
     order: 3;
     flex-basis: 23.30729166666667%;
     padding: 0;
+  }
+
+  .section-news__news {
+    grid-column: span 9;
   }
 
   .section-news__navigation {
