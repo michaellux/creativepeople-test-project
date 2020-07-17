@@ -518,18 +518,16 @@ body {
 .advantage__items {
   position: relative;
   display: flex;
+  flex: 1 1 0;
   flex-direction: column;
   text-align: center;
   transition: flex 0.8s ease;
   justify-content: flex-end;
-  width: 25%;
   height: 100%;
   box-sizing: content-box;
 }
 
-.advantage__views,
-.advantage__panorama,
-.advantage__ceil {
+.advantage__items:not(:last-child) {
   border-right: 1px solid rgba(255, 255, 255, 0.6);
 }
 
@@ -567,6 +565,7 @@ body {
   line-height: rem(25px);
   text-align: center;
   letter-spacing: -0.01em;
+  word-break: break-word;
 }
 
 .advantage__text {
