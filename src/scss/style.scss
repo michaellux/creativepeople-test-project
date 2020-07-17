@@ -512,7 +512,6 @@ body {
   background: url(/img/advantages-back.jpg);
   background-size: cover;
   color: $text-and-icons_light;
-  overflow: auto;
 }
 
 .advantage__items {
@@ -649,7 +648,6 @@ body {
 .advantage__items.open-active .advantage__title {
   animation: titleUp 4s ease 0s 1 normal none;
   animation-fill-mode: forwards;
-  margin-bottom: 0;
 }
 
 /* Поднимаем и плавно отображаем текст */
@@ -717,9 +715,6 @@ body {
 .advantage__items.open-active .advantage__subtitle {
   animation: subtitleUp 3s ease 0s 1 normal none;
   animation-fill-mode: forwards;
-  padding: 0 41%;
-  margin: 0;
-  height: rem(50px);
 }
 
 /*** При клике на плюс - остальные блоки сворачиваются ***/
@@ -773,7 +768,6 @@ body {
 .advantage__items.collapsed .advantage__title {
   animation: collapsed 3s ease 0s 1 normal none;
   animation-fill-mode: forwards;
-  margin: 0;
   width: max-content;
 }
 
@@ -834,7 +828,7 @@ body {
   }
 
   50% {
-    transform: translateY(300px) rotate(-90deg);
+    transform: translateY(300px) rotate(0deg);
   }
 
   100% {
@@ -854,7 +848,7 @@ body {
   }
 
   50% {
-    transform: translateY(300px) rotate(-90deg);
+    transform: translateY(300px) rotate(0deg);
     opacity: 0;
   }
 
@@ -867,6 +861,16 @@ body {
 .advantage__items.collapsed-off .advantage__subtitle {
   animation: returnCollapsedSubTitleToStartPosition 5s ease 0s 1 normal none;
   animation-fill-mode: forwards;
+}
+
+.advantage__items.open.open-active:not(.close-active) .advantage__subtitle {
+  padding: 0 41%;
+  margin: 0;
+  height: rem(50px);
+}
+
+.advantage__items.open.open-active:not(.close-active) .advantage__title {
+  margin-bottom: 0;
 }
 
 @keyframes returnCollapsedButtonToStartPosition {
@@ -884,7 +888,7 @@ body {
 }
 
 .advantage__items.collapsed-off .advantage__button {
-  animation: returnCollapsedButtonToStartPosition 5s ease 5s 1 normal none;
+  animation: returnCollapsedButtonToStartPosition 5s ease 0s 1 normal none;
   animation-fill-mode: forwards;
 }
 
