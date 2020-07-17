@@ -127,6 +127,11 @@ body {
   display: inline-block;
 }
 
+.header__hamburger-button .button__iconwrapper {
+  position: relative;
+  top: -1px;
+}
+
 .header__hamburger-button {
   position: relative;
   background: #ff6c6c;
@@ -244,8 +249,8 @@ body {
 
 .navigation__menu {
   display: flex;
-  flex-basis: rem(326px);
-  width: rem(355px);
+  flex-basis: rem(359px);
+  width: rem(359px);
   justify-content: space-between;
   padding: 0;
   margin-top: 0;
@@ -271,6 +276,14 @@ body {
   position: absolute;
   right: rem(-20px);
   bottom: rem(5px);
+}
+
+.menu__about .itemlink__arrow {
+  right: rem(-16px);
+}
+
+.menu__news .itemlink__arrow {
+  right: rem(-16px);
 }
 
 .section-about {
@@ -316,8 +329,12 @@ body {
 
 .text-rebranding__item {
   margin-bottom: rem(20px);
-  padding-left: rem(12px);
+  padding-left: rem(22px);
   color: $marker;
+}
+
+.text-sociorebranding__item {
+  padding-left: rem(18px);
 }
 
 .text-rebranding__content {
@@ -473,6 +490,7 @@ body {
 
 .quote-block__position {
   font-size: rem(14px);
+  line-height: rem(18px);
   letter-spacing: -0.02em;
   display: block;
   margin-bottom: 0;
@@ -481,7 +499,6 @@ body {
 .text-prize {
   grid-area: text_prize;
   grid-column: span 8;
-  width: rem(852px);
   margin: rem(50px) 0;
   padding: 0;
 }
