@@ -1000,6 +1000,7 @@ body {
   display: grid;
   grid-template-areas: "year month";
   grid-column: span 4;
+  width: rem(378px);
   font-family: 'noto_sanssemibold', sans-serif;
   font-size: rem(18px);
   line-height: rem(25px);
@@ -1043,6 +1044,7 @@ body {
 }
 
 .filter__field.md-theme-default .filter__label {
+  letter-spacing: -0.02em;
   top: 0;
   line-height: normal;
   color: $text-and-icons_dark;
@@ -1083,22 +1085,22 @@ body {
 
 .filter__year {
   width: rem(110px);
-  background: transparent url(/img/arrow-filter-menu.svg) no-repeat rem(90px) rem(10px);
+  background: transparent url(/img/arrow-filter-menu.svg) no-repeat rem(82px) rem(10px);
 }
 
 .filter__year:hover {
-  background: transparent url(/img/arrow-filter-menu_hover.svg) no-repeat rem(90px) rem(10px);
+  background: transparent url(/img/arrow-filter-menu_hover.svg) no-repeat rem(82px) rem(10px);
 }
 
 .filter__month {
   grid-area: month;
   grid-column: span 2;
   width: rem(150px);
-  background: transparent url(/img/arrow-filter-menu.svg) no-repeat rem(115px) rem(10px);
+  background: transparent url(/img/arrow-filter-menu.svg) no-repeat rem(110px) rem(10px);
 }
 
 .filter__month:hover {
-  background: transparent url(/img/arrow-filter-menu_hover.svg) no-repeat rem(115px) rem(10px);
+  background: transparent url(/img/arrow-filter-menu_hover.svg) no-repeat rem(110px) rem(10px);
 }
 
 .filter__year:hover,
