@@ -583,7 +583,7 @@ body {
   pointer-events: none;
 }
 
-/*** При клике на плюс - разворачивание блока ***/
+/* При клике на плюс - разворачивание блока */
 @keyframes expandBlock {
   0% {
     width: 25%;
@@ -599,34 +599,38 @@ body {
   animation-fill-mode: forwards;
 }
 
-/* Поднимаем кнопку */
-@keyframes advantageButtonUp {
+/* Показываем кнопку */
+@keyframes advantageButtonShow {
   0% {
     transform-origin: 50% 50%;
-    opacity: 0;
+    opacity: 1;
   }
 
   25% {
-    opacity: 0;
+    opacity: 0.5;
   }
 
   50% {
-    opacity: 0;
+    opacity: 0.2;
   }
 
   75% {
     opacity: 0;
   }
 
+  80% {
+    opacity: 0.5;
+  }
+
   100% {
-    transform: translate(0, rem(-550px)) rotate(45deg);
+    transform: translate(0, rem(-575px)) rotate(45deg);
     margin: 0;
     opacity: 1;
   }
 }
 
 .advantage__items.open-active .advantage__button {
-  animation: advantageButtonUp 3s ease 3s 1 normal none;
+  animation: advantageButtonShow 3s ease 0s 1 normal none;
   animation-fill-mode: forwards;
 }
 
@@ -638,13 +642,14 @@ body {
 
   100% {
     transform-origin: 10%;
-    transform: translate(0, rem(-340px));
+    transform: translate(0, rem(-440px));
   }
 }
 
 .advantage__items.open-active .advantage__title {
   animation: titleUp 4s ease 0s 1 normal none;
   animation-fill-mode: forwards;
+  margin-bottom: 0;
 }
 
 /* Поднимаем и плавно отображаем текст */
@@ -672,7 +677,7 @@ body {
     visibility: visible;
     height: 100%;
     transform-origin: 10%;
-    transform: translate(0, rem(-222px));
+    transform: translate(0, rem(-225px));
   }
 }
 
@@ -705,13 +710,16 @@ body {
 
   100% {
     transform-origin: 10%;
-    transform: translate(0, rem(-320px));
+    transform: translate(0, rem(-410px));
   }
 }
 
 .advantage__items.open-active .advantage__subtitle {
   animation: subtitleUp 3s ease 0s 1 normal none;
   animation-fill-mode: forwards;
+  padding: 0 41%;
+  margin: 0;
+  height: rem(50px);
 }
 
 /*** При клике на плюс - остальные блоки сворачиваются ***/
@@ -1437,7 +1445,7 @@ body {
     }
   }
 
-  @keyframes advantageButtonUp {
+  @keyframes advantageButtonShow {
     0% {
       transform: translateY(rem(-310px)) rotate(45deg);
       transform-origin: 50% 50%;
