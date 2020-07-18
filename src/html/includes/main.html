@@ -106,7 +106,9 @@
       </section>
     </div>
   </div>
-  <div class="advantages" id="advantages">
+  <div class="advantages__wrapper">
+    <div class="advantages__foreground">
+    <div class="advantages" id="advantages">
     <div v-for="advantage in advantagesList" class="advantage__items" :class="advantage.class" v-if="windowWidth >= 768">
     <button class="advantage__item advantage__button button">
     <span class="button__iconwrapper">
@@ -141,6 +143,8 @@
   </div>
     
   </div>
+  </div>
+</div>
   <section class="section-news" id="news">
     
   </section>
