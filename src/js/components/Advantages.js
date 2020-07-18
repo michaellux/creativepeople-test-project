@@ -62,39 +62,41 @@ const panels = document.querySelectorAll('.advantage__items');
 // Как только мы кликаем на одну из них она становится открытой;
 // если она уже открыта, то закрытой
 function toggleOpen(e) {
-  if (this.classList.contains('collapsed')) {
-    $(this).removeClass('collapsed');
-    $(this).removeClass('collapse');
+  if (document.body.clientWidth >= 768) {
+    if (this.classList.contains('collapsed')) {
+      $(this).removeClass('collapsed');
+      $(this).removeClass('collapse');
 
-    $(this).addClass('open');
+      $(this).addClass('open');
 
-    $(this).addClass('open-active');
-    $('.advantages__foreground').addClass('opened');
+      $(this).addClass('open-active');
+      $('.advantages__foreground').addClass('opened');
 
-    $(this).siblings('.expanded').removeClass('open');
-    $(this).siblings('.expanded').removeClass('open-active');
-    $(this).siblings('.expanded').addClass('collapse');
-    $(this).siblings('.expanded').addClass('collapsed');
-    $(this).siblings('.expanded').removeClass('expanded');
-  } else if (this.classList.contains('expanded')) {
-    $(this).addClass('close-active');
-    $(this).removeClass('open');
-    $(this).siblings('.collapse').addClass('collapsed-off');
-    $(this).siblings('.collapsed').removeClass('collapsed');
-    $(this).siblings('.collapse').removeClass('collapse');
-    setTimeout(() => {
-      $(this).removeClass('open-active');
-      $('.advantages__foreground').removeClass('opened');
-      $(this).removeClass('expanded');
-      $(this).removeClass('close-active');
-    }, 5000);
-  } else {
-    console.log(`toggleopen ${e.target.classList}`);
-    this.classList.toggle('open');
-    this.classList.toggle('open-active');
-    $('.advantages__foreground').toggleClass('opened');
-    $(this).siblings().addClass('collapse');
-    $(this).siblings().not('.open-active').toggleClass('collapsed');
+      $(this).siblings('.expanded').removeClass('open');
+      $(this).siblings('.expanded').removeClass('open-active');
+      $(this).siblings('.expanded').addClass('collapse');
+      $(this).siblings('.expanded').addClass('collapsed');
+      $(this).siblings('.expanded').removeClass('expanded');
+    } else if (this.classList.contains('expanded')) {
+      $(this).addClass('close-active');
+      $(this).removeClass('open');
+      $(this).siblings('.collapse').addClass('collapsed-off');
+      $(this).siblings('.collapsed').removeClass('collapsed');
+      $(this).siblings('.collapse').removeClass('collapse');
+      setTimeout(() => {
+        $(this).removeClass('open-active');
+        $('.advantages__foreground').removeClass('opened');
+        $(this).removeClass('expanded');
+        $(this).removeClass('close-active');
+      }, 5000);
+    } else {
+      console.log(`toggleopen ${e.target.classList}`);
+      this.classList.toggle('open');
+      this.classList.toggle('open-active');
+      $('.advantages__foreground').toggleClass('opened');
+      $(this).siblings().addClass('collapse');
+      $(this).siblings().not('.open-active').toggleClass('collapsed');
+    }
   }
 }
 panels.forEach((panel) => panel.addEventListener('click', toggleOpen));
