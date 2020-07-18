@@ -1724,6 +1724,7 @@ body {
 
   .section-news__navigation {
     grid-column: span 5;
+    width: rem(361px);
   }
 
   .section-news__row {
@@ -1823,6 +1824,10 @@ body {
     grid-column: span 1;
   }
 
+  .text-strategy {
+    margin-bottom: rem(40px);
+  }
+
   .text-rebranding__item {
     padding-left: rem(10px);
   }
@@ -1843,8 +1848,11 @@ body {
   .dashboard__slidecaption {
     margin-bottom: rem(2px);
     text-align: center;
-    padding: 0 35px;
     min-height: rem(72px);
+  }
+
+  .text-aboutchangestrategy {
+    margin: rem(60px) 0 rem(48px) 0;
   }
 
   .quote-block {
@@ -1904,6 +1912,10 @@ body {
 
   .section-news__news {
     display: block;
+  }
+
+  .section-news__navigation {
+    width: auto;
   }
 
   .section-news__title {
