@@ -1262,6 +1262,7 @@ body {
   font-size: rem(18px);
   line-height: rem(25px);
   font-feature-settings: 'swsh' on, 'cpsp' on, 'ordn' on, 'salt' on, 'ss01' on;
+  text-transform: lowercase;
   border: none;
   border-radius: $radius;
   width: rem(242px);
