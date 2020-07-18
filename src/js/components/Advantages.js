@@ -24,7 +24,7 @@ const advantages = new Vue({
         {
           id: 2,
           title: 'высокие потолки',
-          subtitle: 'Простор для идей',
+          subtitle: 'Простор для\u00A0идей',
           text: 'Высота восточного крыла достигает рекордных 374 метров. На высоту жителей и гостей комплекса «Федерация» доставляют 67 самых современных лифтов.',
           class: 'advantage__ceil',
         },
@@ -67,7 +67,9 @@ function toggleOpen(e) {
     $(this).removeClass('collapse');
 
     $(this).addClass('open');
+
     $(this).addClass('open-active');
+    $('.advantages__foreground').addClass('opened');
 
     $(this).siblings('.expanded').removeClass('open');
     $(this).siblings('.expanded').removeClass('open-active');
@@ -82,6 +84,7 @@ function toggleOpen(e) {
     $(this).siblings('.collapse').removeClass('collapse');
     setTimeout(() => {
       $(this).removeClass('open-active');
+      $('.advantages__foreground').removeClass('opened');
       $(this).removeClass('expanded');
       $(this).removeClass('close-active');
     }, 5000);
@@ -89,6 +92,7 @@ function toggleOpen(e) {
     console.log(`toggleopen ${e.target.classList}`);
     this.classList.toggle('open');
     this.classList.toggle('open-active');
+    $('.advantages__foreground').toggleClass('opened');
     $(this).siblings().addClass('collapse');
     $(this).siblings().not('.open-active').toggleClass('collapsed');
   }

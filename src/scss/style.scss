@@ -503,15 +503,44 @@ body {
   padding: 0;
 }
 
+.advantages__wrapper {
+  position: relative;
+}
+
+.advantages__foreground::before {
+  content: '';
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: url(/img/advantages-fore.png);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.advantages__foreground.opened::before {
+  background-image: url(/img/advantages-fore_opened.png);
+}
+
+.advantages__foreground {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-image: url(/img/advantages-back.jpg);
+}
+
 .advantages {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
+  position: relative;
   margin: 0 0 rem(120px) 0;
   height: rem(720px);
-  background: url(/img/advantages-back.jpg);
-  background-size: cover;
   color: $text-and-icons_light;
+  z-index: 3;
 }
 
 .advantage__items {
@@ -1321,6 +1350,15 @@ body {
 
   .text-prize {
     width: inherit;
+  }
+
+  .advantages__foreground {
+    background-image: url(/img/advantages-back1024.jpg);
+  }
+
+  .advantages__foreground::before {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.14) 46.88%, #000 115.14%);
+    opacity: 0.25;
   }
 
   .section-news__row {
