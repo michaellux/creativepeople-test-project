@@ -1413,6 +1413,10 @@ body {
     padding: rem(30px) rem(40px);
   }
 
+  .header__logo {
+    left: 60px;
+  }
+
   .main__about-title {
     margin-top: rem(200px);
     text-indent: rem(-3px);
@@ -1422,12 +1426,20 @@ body {
     text-indent: rem(-2px);
   }
 
+  .menu__item .itemlink__arrow {
+    right: rem(-14px);
+  }
+
   .text-selection {
     margin-left: rem(-2.5px);
   }
 
   .text-rebranding {
     padding-left: rem(16.5px);
+  }
+
+  .text-rebranding__item {
+    padding-left: rem(19px);
   }
 
   .text-strategy {
@@ -1444,6 +1456,10 @@ body {
 
   .about-slider {
     width: rem(688px);
+  }
+
+  .dashboard__slidecaption {
+    padding-right: rem(52px);
   }
 
   .quote-block {
