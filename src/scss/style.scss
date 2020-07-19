@@ -75,9 +75,10 @@ html {
   background-color: white !important;
 }
 
-body {
+html body {
   margin: 0;
   background-color: white;
+  font-weight: 300;
 }
 
 .container {
@@ -845,7 +846,7 @@ body {
 .advantage__items.close-active.expanded {
   animation: returntoStartPositionBlock 3s ease 0s 1 normal none;
   animation-fill-mode: forwards;
-  flex-basis: 0px;
+  flex-basis: 0;
 }
 
 @keyframes returnCollapsedBlockToStartPosition {
@@ -1081,6 +1082,7 @@ body {
   border: none;
   font-family: 'noto_sanssemibold', sans-serif;
   font-size: rem(18px);
+  line-height: rem(25px);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1102,9 +1104,10 @@ body {
 }
 
 .filter__field.md-theme-default .filter__label {
+  font-weight: 600;
   letter-spacing: -0.02em;
   top: 0;
-  line-height: normal;
+  line-height: rem(25px);
   color: $text-and-icons_dark;
 }
 
