@@ -324,14 +324,14 @@ body {
 .text-rebranding {
   grid-area: text_rebranding;
   grid-column: span 8;
-  padding-left: rem(18px);
+  padding-left: rem(20px);
   margin-top: 0;
   margin-bottom: rem(10px);
 }
 
 .text-rebranding__item {
   margin-bottom: rem(20px);
-  padding-left: rem(22px);
+  padding-left: rem(17px);
   color: $marker;
 }
 
