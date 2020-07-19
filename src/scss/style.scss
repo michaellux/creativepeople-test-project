@@ -1030,6 +1030,7 @@ html body {
   height: rem(7px);
   margin: 0 rem(10px);
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .advantages__pagination .swiper-pagination-bullet-active {
@@ -1278,6 +1279,7 @@ html body {
   color: $text-and-icons_light;
   font-family: 'noto_sansregular', sans-serif;
   font-size: rem(18px);
+  font-weight: bold;
   line-height: rem(25px);
   font-feature-settings: 'swsh' on, 'cpsp' on, 'ordn' on, 'salt' on, 'ss01' on;
   text-transform: lowercase;
