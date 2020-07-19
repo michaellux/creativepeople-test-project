@@ -45,6 +45,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "autoprefixer": "^9.8.5",
     "cssnano": "^4.1.10",
     "current-device": "^0.10.1",
     "jquery": "^3.5.1",
@@ -57,5 +58,10 @@
     "vue": "^2.6.11",
     "vue-awesome-swiper": "^4.1.1",
     "vue-material": "^1.0.0-beta-14"
-  }
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "IE 10"
+  ]
 }
