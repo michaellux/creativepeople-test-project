@@ -360,6 +360,7 @@ body {
   grid-area: slider;
   grid-column: span 10;
   width: rem(820px);
+  height: -moz-max-content;
 }
 
 .about-slider .slide__image {
