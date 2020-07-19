@@ -328,6 +328,7 @@ html body {
   padding-left: rem(20px);
   margin-top: 0;
   margin-bottom: rem(10px);
+  -moz-padding-start: 18px;
 }
 
 .text-rebranding__item {
@@ -1365,6 +1366,7 @@ html body {
 
   .text-rebranding {
     padding-left: rem(20px);
+    -moz-padding-start: 17px;
   }
 
   .text-rebranding__item {
@@ -1478,6 +1480,11 @@ html body {
 
   .text-rebranding {
     padding-left: rem(16.5px);
+    -moz-padding-start: 14px;
+  }
+
+  .text-sociorebranding {
+    -moz-padding-start: 16px;
   }
 
   .text-rebranding__item {
@@ -1869,6 +1876,11 @@ html body {
 
   .text-strategy {
     margin-bottom: rem(40px);
+  }
+
+  .text-rebranding,
+  .text-sociorebranding {
+    -moz-padding-start: 15px;
   }
 
   .text-rebranding__item {
