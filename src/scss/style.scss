@@ -1548,6 +1548,7 @@ html body {
   .advantage__items.open,
   .advantage__items.collapsed:not(.open) {
     width: 100%;
+    flex-basis: 0%;
   }
 
   @keyframes expandBlock {
