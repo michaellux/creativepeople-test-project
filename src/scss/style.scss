@@ -617,16 +617,23 @@ body {
 @keyframes expandBlock {
   0% {
     width: 25%;
+    flex-grow: 0;
+  }
+
+  50% {
+    flex-grow: 0;
   }
 
   100% {
     width: 85.34722222222222%;
+    flex-grow: 0;
   }
 }
 
 .advantage__items.open-active {
   animation: expandBlock 3s ease 0s 1 normal none;
   animation-fill-mode: forwards;
+  flex-basis: auto;
 }
 
 /* Показываем кнопку */
@@ -804,11 +811,11 @@ body {
 
 @keyframes collapsedBlock {
   0% {
-    flex: 1;
+    flex-grow: 0;
   }
 
   100% {
-    flex: 0;
+    flex-grow: 0;
   }
 }
 
@@ -818,6 +825,7 @@ body {
   width: 4.791666666666667%;
   justify-content: center;
   align-items: center;
+  flex-basis: auto;
 }
 
 /* При клике на крест - сворачивание блока */
@@ -825,16 +833,19 @@ body {
 @keyframes returntoStartPositionBlock {
   0% {
     width: 85.34722222222222%;
+    flex-grow: 1;
   }
 
   100% {
     width: 25%;
+    flex-grow: 1;
   }
 }
 
 .advantage__items.close-active.expanded {
   animation: returntoStartPositionBlock 3s ease 0s 1 normal none;
   animation-fill-mode: forwards;
+  flex-basis: 0px;
 }
 
 @keyframes returnCollapsedBlockToStartPosition {
