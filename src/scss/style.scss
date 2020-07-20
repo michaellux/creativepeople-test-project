@@ -1241,6 +1241,7 @@ html body {
   font-size: rem(24px);
   line-height: rem(30px);
   font-feature-settings: 'cpsp' on, 'swsh' on, 'ss01' on;
+  font-weight: 600;
   color: $header;
 }
 
@@ -1278,7 +1279,7 @@ html body {
   grid-column: 5 / span 4;
   background: $controls-and-nav;
   color: $text-and-icons_light;
-  font-family: 'noto_sansregular', sans-serif;
+  font-family: 'noto_sansbold', sans-serif;
   font-size: rem(18px);
   font-weight: bold;
   line-height: rem(25px);
