@@ -27,6 +27,7 @@
               </md-option>
               <md-option
                 v-for="year in years"
+                :key="year"
                 class="filter-year__option"
                 :value="year"
               >
@@ -54,6 +55,7 @@
               </md-option>
               <md-option
                 v-for="month in months"
+                :key="month"
                 class="filter-month__option"
                 :value="month"
               >
@@ -69,7 +71,8 @@
           class="section-news__row row"
         >
           <article
-            v-for="(newsItem, index) in row"
+            v-for="(newsItem) in row"
+            :key="newsItem.id"
             class="section-news__newsitem newsitem"
           >
             <a
@@ -102,10 +105,10 @@
               >
               <h4 class="newsitem__title">{{ newsItem.title }}</h4>
               <p class="text newsitem__text">{{ newsItem.text }}</p>
-              <datetime
+              <time
                 class="newsitem__date"
                 :datetime="newsItem.date"
-              >{{ newsItem.date }}</datetime>
+              >{{ newsItem.date }}</time>
             </a>
           </article>
           <svg
