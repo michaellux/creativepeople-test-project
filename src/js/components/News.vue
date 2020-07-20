@@ -515,12 +515,9 @@ export default {
       const row = [];
       let i; let l;
       const chunkSize = this.rowSize;
-      console.log(chunkSize);
-      console.log(this.filteredNews.length);
       for (i = 0, l = this.cropFilteredNewsList.length; i < l; i += chunkSize) {
         row.push(this.cropFilteredNewsList.slice(i, i + chunkSize));
       }
-      console.log(row);
       return row;
     },
   },

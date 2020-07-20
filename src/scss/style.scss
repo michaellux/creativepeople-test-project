@@ -623,7 +623,6 @@ html body {
   pointer-events: none;
 }
 
-/* При клике на плюс - разворачивание блока */
 @keyframes expandBlock {
   0% {
     width: 25%;
@@ -646,7 +645,6 @@ html body {
   flex-basis: auto;
 }
 
-/* Показываем кнопку */
 @keyframes advantageButtonShow {
   0% {
     transform-origin: 50% 50%;
@@ -681,7 +679,6 @@ html body {
   animation-fill-mode: forwards;
 }
 
-/* Поднимаем заголовок */
 @keyframes titleUp {
   0% {
     transform-origin: 10%;
@@ -698,7 +695,6 @@ html body {
   animation-fill-mode: forwards;
 }
 
-/* Поднимаем и плавно отображаем текст */
 @keyframes fadeInAndUpText {
   0% {
     opacity: 0;
@@ -735,7 +731,6 @@ html body {
   align-self: center;
 }
 
-/* Поднимаем подзаголовок */
 @keyframes subtitleUp {
   0% {
     transform-origin: 10%;
@@ -765,7 +760,6 @@ html body {
   animation-fill-mode: forwards;
 }
 
-/*** При клике на плюс - остальные блоки сворачиваются ***/
 @keyframes collapse {
   0% {
     color: inherit;
@@ -837,8 +831,6 @@ html body {
   align-items: center;
   flex-basis: auto;
 }
-
-/* При клике на крест - сворачивание блока */
 
 @keyframes returntoStartPositionBlock {
   0% {
@@ -945,7 +937,6 @@ html body {
   animation-fill-mode: forwards;
 }
 
-/* Опускаем кнопку на прежнее место */
 @keyframes advantageButtonDown {
   0% {
     transform: translate(0, rem(-550px)) rotate(45deg);

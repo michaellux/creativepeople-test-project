@@ -52,16 +52,9 @@ const advantages = new Vue({
   },
 });
 
-/* * Анимация панелей * */
-
-// Берём все панели
 const panels = document.querySelectorAll('.advantage__items');
 
-// По умолчанию они закрыты
-
-// Как только мы кликаем на одну из них она становится открытой;
-// если она уже открыта, то закрытой
-function toggleOpen(e) {
+function toggleOpen() {
   if (document.body.clientWidth >= 768) {
     if (this.classList.contains('collapsed')) {
       $(this).removeClass('collapsed');
@@ -90,7 +83,6 @@ function toggleOpen(e) {
         $(this).removeClass('close-active');
       }, 5000);
     } else {
-      console.log(`toggleopen ${e.target.classList}`);
       this.classList.toggle('open');
       this.classList.toggle('open-active');
       $('.advantages__foreground').toggleClass('opened');
