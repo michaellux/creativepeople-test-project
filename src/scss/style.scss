@@ -1613,7 +1613,6 @@ html body {
 
     100% {
       transform: rotate(45deg);
-      position: absolute;
       top: 9.84251968503937%;
       margin: 0;
       opacity: 1;
@@ -1622,14 +1621,12 @@ html body {
 
   @keyframes titleUp {
     0% {
-      position: absolute;
       transform-origin: 10%;
       top: 0;
     }
 
     100% {
       transform-origin: 10%;
-      position: absolute;
       top: 27.55905511811024%;
     }
   }
@@ -1654,7 +1651,6 @@ html body {
 
     100% {
       transform-origin: 10%;
-      position: absolute;
       top: 36.41732283464567%;
       opacity: 1;
     }
@@ -1785,6 +1781,10 @@ html body {
     order: 3;
     flex-basis: 23.30729166666667%;
     padding: 0;
+  }
+
+  .advantage__items.open-active:not(.close-active) .advantage__item {
+    position: absolute;
   }
 
   .advantage__items.open.open-active:not(.close-active) .advantage__subtitle {
