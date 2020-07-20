@@ -409,6 +409,7 @@ html body {
   flex-basis: rem(64px);
   font-family: 'noto_sanssemibold', sans-serif;
   font-size: rem(14px);
+  font-weight: 600;
   line-height: rem(18px);
   margin-top: rem(1px);
 }
@@ -1095,6 +1096,7 @@ html body {
 .filter__field .filter__label + .md-menu .md-input {
   position: relative;
   top: rem(-3px);
+  font-weight: 600;
   line-height: rem(25px);
 }
 
@@ -1361,6 +1363,10 @@ html body {
     padding: rem(30px) rem(42px);
   }
 
+  .header__logo {
+    left: rem(39px);
+  }
+
   .header__additional-buttons {
     flex-basis: rem(140px);
   }
@@ -1467,7 +1473,7 @@ html body {
   }
 
   .header__logo {
-    left: 60px;
+    left: rem(54px);
   }
 
   .header__additional-buttons {
@@ -1532,6 +1538,10 @@ html body {
   .text-prize {
     width: inherit;
     grid-column: span 9;
+  }
+
+  .text-aboutchangestrategy {
+    margin-top: rem(80px);
   }
 
   .advantages__foreground {
