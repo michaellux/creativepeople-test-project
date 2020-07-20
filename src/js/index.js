@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-new */
 import Vue from 'vue';
+import VueScrollTo from 'vue-scrollto';
 import Swiper from 'swiper';
 import device from 'current-device';
 import About from './components/About.vue';
@@ -32,6 +33,8 @@ const swiper = new Swiper('.advantages__slider', {
   },
 });
 
+Vue.use(VueScrollTo);
+
 new Vue({
   el: '#navigation',
   data() {
@@ -49,13 +52,6 @@ new Vue({
         },
       ],
     };
-  },
-  methods: {
-    goToBlock(event) {
-      event.preventDefault();
-      const link = event.target.getAttribute('href');
-      document.querySelector(link).scrollIntoView({ behavior: 'smooth', block: 'start' });
-    },
   },
 });
 
