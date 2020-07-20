@@ -1312,6 +1312,15 @@ html body {
   grid-column: span 3;
 }
 
+.footer__years,
+.footer__copyright,
+.footer__whocreate {
+  font-weight: 300;
+  font-size: rem(18px);
+  line-height: rem(24px);
+  letter-spacing: -0.01em;
+}
+
 .footer__whocreate {
   grid-area: creator;
   grid-column: 10 / span 3;
