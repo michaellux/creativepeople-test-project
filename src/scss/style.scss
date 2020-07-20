@@ -155,8 +155,13 @@ html body {
 
 .header__logo {
   position: relative;
-  top: 5px;
-  left: 44px;
+  top: rem(5px);
+  left: rem(44px);
+}
+
+.header__logo_mini {
+  position: relative;
+  top: rem(3px);
 }
 
 .mobile .header__logo {
@@ -388,6 +393,7 @@ html body {
   width: rem(7px);
   height: rem(7px);
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 .about-slider__pagination > .swiper-pagination-bullet-active {
@@ -1898,8 +1904,16 @@ html body {
     grid-column: span 1;
   }
 
+  .text-selection {
+    margin-bottom: rem(20px);
+  }
+
   .text-strategy {
     margin-bottom: rem(40px);
+  }
+
+  .text-rebranding {
+    margin-bottom: 0;
   }
 
   .text-rebranding,
@@ -2034,11 +2048,13 @@ html body {
     line-height: normal;
   }
 
-  .filter__year {
+  .filter__year,
+  .filter__year:hover {
     background-position: rem(73px) rem(8px);
   }
 
-  .filter__month {
+  .filter__month,
+  .filter__month:hover {
     background-position: rem(97px) rem(8px);
   }
 
