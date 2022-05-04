@@ -1,5 +1,5 @@
-# [Решение](http://metro-creativepeopleproject.surge.sh/) тестового задания от [CreativePeople](https://hr.cpeople.ru/) на вакансию «Frontend-разработчик»
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e7f28daa5faa4f119c029d434777eb95)](https://www.codacy.com/gh/michaellux/creativepeople-test-project/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=michaellux/creativepeople-test-project&amp;utm_campaign=Badge_Grade)
+# [Решение](http://metro-creativepeopleproject.surge.sh/) тестового задания от [CreativePeople](https://hr.cpeople.ru/) на вакансию «Frontend-разработчик»[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e7f28daa5faa4f119c029d434777eb95)](https://www.codacy.com/gh/michaellux/creativepeople-test-project/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=michaellux/creativepeople-test-project&amp;utm_campaign=Badge_Grade)
+
 Нужно сверстать адаптивный макет. 
 
 - На всех разрешениях, кроме 320, сетка фиксированной ширины, как в макетах. На 320 фиксированные отступы по краям, сетка тянется.
