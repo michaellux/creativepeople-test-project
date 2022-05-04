@@ -1,5 +1,7 @@
 # [Решение](http://metro-creativepeopleproject.surge.sh/) тестового задания от [CreativePeople](https://hr.cpeople.ru/) на вакансию «Frontend-разработчик»
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e80dcd960a924562bb72314dfff2f538)](https://app.codacy.com/gh/michaellux/creativepeople-test-project?utm_source=github.com&utm_medium=referral&utm_content=michaellux/creativepeople-test-project&utm_campaign=Badge_Grade_Settings)
+
 Нужно сверстать адаптивный макет. 
 
 - На всех разрешениях, кроме 320, сетка фиксированной ширины, как в макетах. На 320 фиксированные отступы по краям, сетка тянется.
